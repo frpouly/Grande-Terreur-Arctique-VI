@@ -9,7 +9,7 @@ const MOVE_SPEED = 300
 
 var weapon = null
 var health = 100
-var hunger = 10000
+var hunger = 5000
 var usable = null
 onready var raycast = $RayCast2D
 
@@ -36,6 +36,8 @@ func _physics_process(delta):
 	hunger-=1
 	if(hunger%50==0):
 		emit_signal("hunger")
+		if(hunger==0):
+			kill()
 	
 	var look_vec = get_global_mouse_position() - global_position
 	global_rotation = atan2(look_vec.y, look_vec.x)
@@ -55,7 +57,7 @@ func _physics_process(delta):
 func kill():
 	health-=10;
 	emit_signal("hit",health)
-	if(health<=0 || hunger<0):
+	if(health<=0 || hunger<=0):
 		get_tree().reload_current_scene()
 	
 
