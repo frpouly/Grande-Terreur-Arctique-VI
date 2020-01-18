@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/blue_cross.png-204723f9c9060deb86590a185b3cdf55.stex"
+path="res://.import/blue_cross.png-df4f55dc8bdd870b8492255af7c4b8e7.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://PNG/blue_cross.png"
-dest_files=[ "res://.import/blue_cross.png-204723f9c9060deb86590a185b3cdf55.stex" ]
+source_file="res://Assets/PNG/blue_cross.png"
+dest_files=[ "res://.import/blue_cross.png-df4f55dc8bdd870b8492255af7c4b8e7.stex" ]
 
 [params]
 

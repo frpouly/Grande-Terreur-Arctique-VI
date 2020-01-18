@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/yellow_button03.png-77c13415a7e3d00a6edf1be69a401d4f.stex"
+path="res://.import/yellow_button03.png-06edad2b1daeb3cc5d724ac4580bc222.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://PNG/yellow_button03.png"
-dest_files=[ "res://.import/yellow_button03.png-77c13415a7e3d00a6edf1be69a401d4f.stex" ]
+source_file="res://Assets/PNG/yellow_button03.png"
+dest_files=[ "res://.import/yellow_button03.png-06edad2b1daeb3cc5d724ac4580bc222.stex" ]
 
 [params]
 

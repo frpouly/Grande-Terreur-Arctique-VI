@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/grey_checkmarkWhite.png-bbee25251aa5737c83344f728c3121d5.stex"
+path="res://.import/grey_checkmarkWhite.png-e0abb7c92f7a2fe3db1ea625741339b9.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://PNG/grey_checkmarkWhite.png"
-dest_files=[ "res://.import/grey_checkmarkWhite.png-bbee25251aa5737c83344f728c3121d5.stex" ]
+source_file="res://Assets/PNG/grey_checkmarkWhite.png"
+dest_files=[ "res://.import/grey_checkmarkWhite.png-e0abb7c92f7a2fe3db1ea625741339b9.stex" ]
 
 [params]
 

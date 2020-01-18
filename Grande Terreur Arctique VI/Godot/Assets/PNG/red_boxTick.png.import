@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/red_boxTick.png-7f9cff5755f446edf97c280dcf2bb7cb.stex"
+path="res://.import/red_boxTick.png-ec40472b043f2da6bc8c10c886a5f72e.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://PNG/red_boxTick.png"
-dest_files=[ "res://.import/red_boxTick.png-7f9cff5755f446edf97c280dcf2bb7cb.stex" ]
+source_file="res://Assets/PNG/red_boxTick.png"
+dest_files=[ "res://.import/red_boxTick.png-ec40472b043f2da6bc8c10c886a5f72e.stex" ]
 
 [params]
 

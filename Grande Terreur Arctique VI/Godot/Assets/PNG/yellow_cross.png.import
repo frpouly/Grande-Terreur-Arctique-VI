@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/yellow_cross.png-f936c3d50f2e86e493170a413cb907a8.stex"
+path="res://.import/yellow_cross.png-fcfc02499686095c2922244163a571fa.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://PNG/yellow_cross.png"
-dest_files=[ "res://.import/yellow_cross.png-f936c3d50f2e86e493170a413cb907a8.stex" ]
+source_file="res://Assets/PNG/yellow_cross.png"
+dest_files=[ "res://.import/yellow_cross.png-fcfc02499686095c2922244163a571fa.stex" ]
 
 [params]
 

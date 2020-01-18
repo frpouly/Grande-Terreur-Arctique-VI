@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/blue_checkmark.png-f06aeb880c21c14f407098c0a841c48b.stex"
+path="res://.import/blue_checkmark.png-19f26a0120e0fa991d1eafdfc7fe8339.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://PNG/blue_checkmark.png"
-dest_files=[ "res://.import/blue_checkmark.png-f06aeb880c21c14f407098c0a841c48b.stex" ]
+source_file="res://Assets/PNG/blue_checkmark.png"
+dest_files=[ "res://.import/blue_checkmark.png-19f26a0120e0fa991d1eafdfc7fe8339.stex" ]
 
 [params]
 

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/blue_tick.png-a41faa446724daf35be679a4d8eace4a.stex"
+path="res://.import/blue_tick.png-215cebf5639dbfd99a31ec7ff5a9feaf.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://PNG/blue_tick.png"
-dest_files=[ "res://.import/blue_tick.png-a41faa446724daf35be679a4d8eace4a.stex" ]
+source_file="res://Assets/PNG/blue_tick.png"
+dest_files=[ "res://.import/blue_tick.png-215cebf5639dbfd99a31ec7ff5a9feaf.stex" ]
 
 [params]
 

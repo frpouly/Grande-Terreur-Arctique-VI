@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/yellow_boxCheckmark.png-07f3c61549f017590639663267009ea4.stex"
+path="res://.import/yellow_boxCheckmark.png-d42fe331aafeb574726078dd2f094f85.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://PNG/yellow_boxCheckmark.png"
-dest_files=[ "res://.import/yellow_boxCheckmark.png-07f3c61549f017590639663267009ea4.stex" ]
+source_file="res://Assets/PNG/yellow_boxCheckmark.png"
+dest_files=[ "res://.import/yellow_boxCheckmark.png-d42fe331aafeb574726078dd2f094f85.stex" ]
 
 [params]
 

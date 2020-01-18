@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/grey_crossWhite.png-67066e4b13cad7f2701b1ad243f5f24a.stex"
+path="res://.import/grey_crossWhite.png-91a2cdfe9e381c987f093a2bf351d5ca.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://PNG/grey_crossWhite.png"
-dest_files=[ "res://.import/grey_crossWhite.png-67066e4b13cad7f2701b1ad243f5f24a.stex" ]
+source_file="res://Assets/PNG/grey_crossWhite.png"
+dest_files=[ "res://.import/grey_crossWhite.png-91a2cdfe9e381c987f093a2bf351d5ca.stex" ]
 
 [params]
 

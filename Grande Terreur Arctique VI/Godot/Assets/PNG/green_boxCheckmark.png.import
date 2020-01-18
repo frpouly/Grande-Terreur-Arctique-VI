@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/green_boxCheckmark.png-8e53bac8f336f6665fbcec4db7dcbc61.stex"
+path="res://.import/green_boxCheckmark.png-a3f5233e7973e992d5d00d2e5f90e121.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://PNG/green_boxCheckmark.png"
-dest_files=[ "res://.import/green_boxCheckmark.png-8e53bac8f336f6665fbcec4db7dcbc61.stex" ]
+source_file="res://Assets/PNG/green_boxCheckmark.png"
+dest_files=[ "res://.import/green_boxCheckmark.png-a3f5233e7973e992d5d00d2e5f90e121.stex" ]
 
 [params]
 

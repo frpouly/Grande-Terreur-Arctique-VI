@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/grey_sliderHorizontal.png-3b085160b6221dc6d92a9f19b81c31be.stex"
+path="res://.import/grey_sliderHorizontal.png-34a9acc45340b357631a8d5a754eabde.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://PNG/grey_sliderHorizontal.png"
-dest_files=[ "res://.import/grey_sliderHorizontal.png-3b085160b6221dc6d92a9f19b81c31be.stex" ]
+source_file="res://Assets/PNG/grey_sliderHorizontal.png"
+dest_files=[ "res://.import/grey_sliderHorizontal.png-34a9acc45340b357631a8d5a754eabde.stex" ]
 
 [params]
 

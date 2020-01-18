@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/blue_sliderDown.png-aa460d45b7dae1bc344b1bf260bc5d06.stex"
+path="res://.import/blue_sliderDown.png-8b123e228745f9c5a2ef2d72dfca6b53.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://PNG/blue_sliderDown.png"
-dest_files=[ "res://.import/blue_sliderDown.png-aa460d45b7dae1bc344b1bf260bc5d06.stex" ]
+source_file="res://Assets/PNG/blue_sliderDown.png"
+dest_files=[ "res://.import/blue_sliderDown.png-8b123e228745f9c5a2ef2d72dfca6b53.stex" ]
 
 [params]
 

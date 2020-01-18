@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/yellow_circle.png-cac491487b1d596f8cb67c7f8a231782.stex"
+path="res://.import/yellow_circle.png-03b49bea4ebf20160b222724dbd87ec3.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://PNG/yellow_circle.png"
-dest_files=[ "res://.import/yellow_circle.png-cac491487b1d596f8cb67c7f8a231782.stex" ]
+source_file="res://Assets/PNG/yellow_circle.png"
+dest_files=[ "res://.import/yellow_circle.png-03b49bea4ebf20160b222724dbd87ec3.stex" ]
 
 [params]
 
