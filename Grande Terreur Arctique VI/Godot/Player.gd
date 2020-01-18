@@ -9,6 +9,9 @@ var weapon = null
 var health = 100
 onready var raycast = $RayCast2D
 
+var TEMPO_WEAPON_CHANGE = 2.0
+var weapon_changed = 0.0
+
 func _ready():
 	yield(get_tree(), "idle_frame")
 	get_tree().call_group("zombies", "set_player", self)
@@ -31,24 +34,31 @@ func _physics_process(delta):
 	global_rotation = atan2(look_vec.y, look_vec.x)
 	
 	if Input.is_action_pressed("shoot"):
-		fire();
-		#var coll = raycast.get_collider()
-		#if raycast.is_colliding() and coll.has_method("kill"):
-		#if raycast.is_colliding() and coll.has_method("kill"):
-		#	coll.kill()
+		fire()
+	
+	if Input.is_action_just_pressed("reload"):
+		reload()
+		
+	if(weapon_changed < TEMPO_WEAPON_CHANGE):
+		weapon_changed += delta
 
 func kill():
 	health-=10;
 	emit_signal("hit",health)
 	if(health<0):
 		get_tree().reload_current_scene()
-	
-
-func pickup():
-	print("Picked Up")
 
 func pickup_weapon(var w):
+	if(weapon != null && weapon_changed > TEMPO_WEAPON_CHANGE):
+		remove_child(weapon)
 	weapon = w
+	get_parent().remove_child(weapon)
+	weapon.position = Vector2(0, 0)
+	add_child(weapon)
+
+func reload():
+	if(weapon != null):
+		weapon.reload()
 
 func fire():
 	if(weapon != null):
