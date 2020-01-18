@@ -1,0 +1,18 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/pistol-coonan.obj-65e19960c2ef3a2d6d3a6c11f784f5fd.mesh"
+
+[deps]
+
+files=[ "res://.import/pistol-coonan.obj-65e19960c2ef3a2d6d3a6c11f784f5fd.mesh" ]
+
+source_file="res://Assets/guns/obj_mtl/pistol-coonan.obj"
+dest_files=[ "res://.import/pistol-coonan.obj-65e19960c2ef3a2d6d3a6c11f784f5fd.mesh", "res://.import/pistol-coonan.obj-65e19960c2ef3a2d6d3a6c11f784f5fd.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+optimize_mesh=true

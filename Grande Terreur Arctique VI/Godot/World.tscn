@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-[gd_scene load_steps=12 format=2]
-=======
-[gd_scene load_steps=10 format=2]
->>>>>>> 1436be6956dab3806fac01f04c9446e4ff0f756c
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://World.gd" type="Script" id=1]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=2]
@@ -11,15 +7,13 @@
 [ext_resource path="res://Lifebar.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Assets/PNG/blue_button13.png" type="Texture" id=6]
 [ext_resource path="res://Assets/PNG/blue_button01.png" type="Texture" id=7]
-<<<<<<< HEAD
 [ext_resource path="res://Assets/PNG/001ThreeBlackStars.png" type="Texture" id=8]
 [ext_resource path="res://Assets/PNG/001ThreeStars.png" type="Texture" id=9]
-[ext_resource path="res://fishbar3.png" type="Texture" id=10]
-[ext_resource path="res://Zombie.tscn" type="PackedScene" id=11]
-=======
-[ext_resource path="res://Uzi.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Assets/sounds/guns/9mm.wav" type="AudioStream" id=9]
->>>>>>> 1436be6956dab3806fac01f04c9446e4ff0f756c
+[ext_resource path="res://Assets/PNG/001_Poissons.png" type="Texture" id=10]
+[ext_resource path="res://Uzi.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Assets/sounds/guns/9mm.wav" type="AudioStream" id=12]
+[ext_resource path="res://Zombies.gd" type="Script" id=13]
+[ext_resource path="res://Zombie.tscn" type="PackedScene" id=14]
 
 [node name="World" type="Node2D"]
 script = ExtResource( 1 )
@@ -28,7 +22,7 @@ script = ExtResource( 1 )
 position = Vector2( 527.424, 335.734 )
 
 [node name="fish" parent="." instance=ExtResource( 3 )]
-position = Vector2( 559.556, 59.5656 )
+position = Vector2( 474.633, 101.048 )
 
 [node name="weapon" parent="." instance=ExtResource( 4 )]
 position = Vector2( 154.586, 270.122 )
@@ -48,45 +42,42 @@ value = 80.0
 texture_under = ExtResource( 6 )
 texture_progress = ExtResource( 7 )
 
-<<<<<<< HEAD
 [node name="TextureProgress3" type="TextureProgress" parent="Control"]
-margin_left = -180.049
-margin_top = -171.475
-margin_right = 2579.95
-margin_bottom = 746.525
+margin_left = -177.565
+margin_top = -178.997
+margin_right = 2582.44
+margin_bottom = 739.003
 rect_scale = Vector2( 0.06, 0.06 )
 max_value = 3.0
-value = 3.0
 texture_under = ExtResource( 8 )
 texture_progress = ExtResource( 9 )
 
 [node name="TextureProgress4" type="TextureProgress" parent="Control"]
-margin_left = 569.25
-margin_top = -227.15
-margin_right = 836.25
-margin_bottom = -179.15
-value = 100.0
+margin_left = 544.15
+margin_top = -223.388
+margin_right = 1109.15
+margin_bottom = -137.388
+rect_scale = Vector2( 0.5, 0.5 )
 texture_progress = ExtResource( 10 )
 
-[node name="Zombies" type="Node2D" parent="."]
+[node name="Uzi" parent="." instance=ExtResource( 11 )]
+position = Vector2( 257.781, 435.988 )
 
-[node name="Zombie" parent="Zombies" instance=ExtResource( 11 )]
+[node name="Sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 12 )
+
+[node name="Zombies" type="Node" parent="."]
+script = ExtResource( 13 )
+
+[node name="Zombie" parent="Zombies" instance=ExtResource( 14 )]
 position = Vector2( 907.396, 548.029 )
 
-[node name="Zombie2" parent="Zombies" instance=ExtResource( 11 )]
+[node name="Zombie2" parent="Zombies" instance=ExtResource( 14 )]
 position = Vector2( 847.822, 73.2498 )
 
-[node name="Zombie3" parent="Zombies" instance=ExtResource( 11 )]
+[node name="Zombie3" parent="Zombies" instance=ExtResource( 14 )]
 position = Vector2( 933.715, 226.638 )
 [connection signal="eaten" from="Player" to="Control" method="_on_Player_eaten"]
 [connection signal="hit" from="Player" to="Control" method="_on_Player_hit"]
 [connection signal="hunger" from="Player" to="Control" method="_on_Player_hunger"]
-=======
-[node name="Uzi" parent="." instance=ExtResource( 8 )]
-position = Vector2( 257.781, 435.988 )
-
-[node name="Sound" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource( 9 )
-[connection signal="hit" from="Player" to="Control" method="_on_Player_hit"]
 [connection signal="body_entered" from="Uzi" to="Uzi" method="_on_Area2D_body_entered"]
->>>>>>> 1436be6956dab3806fac01f04c9446e4ff0f756c
