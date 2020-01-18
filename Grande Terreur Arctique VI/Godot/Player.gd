@@ -53,14 +53,11 @@ func kill():
 	emit_signal("hit",health)
 	if(health<=0 || hunger<0):
 		get_tree().reload_current_scene()
-<<<<<<< HEAD
 	
 
 func pickup():
 	emit_signal("eaten")
 	print("Picked Up")
-=======
->>>>>>> 1436be6956dab3806fac01f04c9446e4ff0f756c
 
 func pickup_weapon(var w):
 	if(weapon != null && weapon_changed > TEMPO_WEAPON_CHANGE):
