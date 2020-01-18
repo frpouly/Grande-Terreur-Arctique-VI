@@ -12,9 +12,6 @@ var magazine_capacity = 12
 var nb_bullets_magazine = 12
 var bullets_total = 120
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
 
 func _on_Area2D_body_entered(body):
 	if(body.has_method("pickup_weapon")):

@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Pickable.gd" type="Script" id=1]
-[ext_resource path="res://gray-fish-png-clip-art.png" type="Texture" id=2]
+[ext_resource path="res://fish.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 24.6483, 19.6715 )
@@ -17,4 +17,9 @@ shape = SubResource( 1 )
 position = Vector2( 12.7425, 9.69289 )
 scale = Vector2( 0.0524142, 0.0571773 )
 texture = ExtResource( 2 )
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+autostart = true
 [connection signal="body_entered" from="." to="." method="_on_Area2D_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

@@ -10,6 +10,7 @@ const MOVE_SPEED = 300
 var weapon = null
 var health = 100
 var hunger = 10000
+var usable = null
 onready var raycast = $RayCast2D
 
 var TEMPO_WEAPON_CHANGE = 2.0
@@ -41,6 +42,9 @@ func _physics_process(delta):
 	
 	if Input.is_action_pressed("shoot"):
 		fire()
+		
+	if Input.is_action_pressed("use"):
+		use()
 	
 	if Input.is_action_just_pressed("reload"):
 		reload()
@@ -74,7 +78,21 @@ func reload():
 func fire():
 	if(weapon != null):
 		weapon.fire()
+		
+func use():
+	if(usable != null):
+		usable.empty()
 
     #var coll = bullet.get_collider()
     #if (coll.has_method("kill") and bullet.is_colliding()):
     #    coll.kill()
+
+
+func _on_Bin_body_entered(body):
+	print("entered")
+	if(body.has_method("use")):
+    	    body.usable=self
+
+func _on_Bin_body_exited(body):
+	if(body.has_method("use")):
+    	    body.usable=null
