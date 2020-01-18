@@ -1,20 +1,19 @@
 [gd_scene load_steps=15 format=2]
 
-[ext_resource path="res://World.gd" type="Script" id=1]
-[ext_resource path="res://Player.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Pickable.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Weapon.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Lifebar.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Assets/PNG/blue_button13.png" type="Texture" id=6]
-[ext_resource path="res://Assets/PNG/blue_button01.png" type="Texture" id=7]
-[ext_resource path="res://Assets/PNG/001ThreeBlackStars.png" type="Texture" id=8]
-[ext_resource path="res://Assets/PNG/001ThreeStars.png" type="Texture" id=9]
-[ext_resource path="res://Assets/PNG/001_Poissons.png" type="Texture" id=10]
+[ext_resource path="res://carte/World.gd" type="Script" id=1]
+[ext_resource path="res://player/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://pickable/Pickable.tscn" type="PackedScene" id=3]
+[ext_resource path="res://pickable/Weapon.tscn" type="PackedScene" id=4]
+[ext_resource path="res://ui/Lifebar.tscn" type="PackedScene" id=5]
+[ext_resource path="res://assets/PNG/blue_button13.png" type="Texture" id=6]
+[ext_resource path="res://assets/PNG/blue_button01.png" type="Texture" id=7]
+[ext_resource path="res://assets/PNG/001ThreeBlackStars.png" type="Texture" id=8]
+[ext_resource path="res://assets/PNG/001ThreeStars.png" type="Texture" id=9]
+[ext_resource path="res://assets/PNG/001_Poissons.png" type="Texture" id=10]
 [ext_resource path="res://pickable/Uzi.tscn" type="PackedScene" id=11]
-[ext_resource path="res://Assets/sounds/guns/9mm.wav" type="AudioStream" id=12]
-[ext_resource path="res://Zombie.tscn" type="PackedScene" id=13]
-[ext_resource path="res://Bin.tscn" type="PackedScene" id=14]
-
+[ext_resource path="res://assets/sounds/guns/9mm.wav" type="AudioStream" id=12]
+[ext_resource path="res://enemies/Zombie.tscn" type="PackedScene" id=13]
+[ext_resource path="res://bin/Bin.tscn" type="PackedScene" id=14]
 
 [node name="World" type="Node2D"]
 script = ExtResource( 1 )
@@ -32,7 +31,10 @@ position = Vector2( 474.633, 101.048 )
 one_shot = true
 autostart = true
 
-[node name="Control" parent="." instance=ExtResource( 4 )]
+[node name="weapon" parent="." instance=ExtResource( 4 )]
+position = Vector2( 154.586, 270.122 )
+
+[node name="Control" parent="." instance=ExtResource( 5 )]
 margin_left = 183.75
 margin_top = 231.728
 margin_right = 183.75
@@ -44,8 +46,8 @@ margin_top = -229.116
 margin_right = 9.1192
 margin_bottom = -180.116
 value = 80.0
-texture_under = ExtResource( 5 )
-texture_progress = ExtResource( 6 )
+texture_under = ExtResource( 6 )
+texture_progress = ExtResource( 7 )
 
 [node name="TextureProgress3" type="TextureProgress" parent="Control"]
 margin_left = -177.565
@@ -54,8 +56,8 @@ margin_right = 2582.44
 margin_bottom = 739.003
 rect_scale = Vector2( 0.06, 0.06 )
 max_value = 3.0
-texture_under = ExtResource( 7 )
-texture_progress = ExtResource( 8 )
+texture_under = ExtResource( 8 )
+texture_progress = ExtResource( 9 )
 
 [node name="TextureProgress4" type="TextureProgress" parent="Control"]
 margin_left = 544.15
@@ -63,30 +65,27 @@ margin_top = -223.388
 margin_right = 1109.15
 margin_bottom = -137.388
 rect_scale = Vector2( 0.5, 0.5 )
-texture_progress = ExtResource( 9 )
+texture_progress = ExtResource( 10 )
 
-[node name="Uzi" parent="." instance=ExtResource( 10 )]
+[node name="Uzi" parent="." instance=ExtResource( 11 )]
 position = Vector2( 257.781, 435.988 )
 
 [node name="Sound" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource( 11 )
+stream = ExtResource( 12 )
 
 [node name="Zombies" type="Node2D" parent="."]
 
-[node name="Zombie" parent="Zombies" instance=ExtResource( 12 )]
+[node name="Zombie" parent="Zombies" instance=ExtResource( 13 )]
 position = Vector2( 907.396, 548.029 )
 
-[node name="Zombie2" parent="Zombies" instance=ExtResource( 12 )]
+[node name="Zombie2" parent="Zombies" instance=ExtResource( 13 )]
 position = Vector2( 847.822, 73.2498 )
 
-[node name="Zombie3" parent="Zombies" instance=ExtResource( 12 )]
+[node name="Zombie3" parent="Zombies" instance=ExtResource( 13 )]
 position = Vector2( 933.715, 226.638 )
 
-[node name="Bin" parent="." instance=ExtResource( 13 )]
+[node name="Bin" parent="." instance=ExtResource( 14 )]
 position = Vector2( 42.2576, 439.936 )
-
-[node name="Gun" parent="." instance=ExtResource( 14 )]
-position = Vector2( 193.853, 214.531 )
 [connection signal="eaten" from="Player" to="Control" method="_on_Player_eaten"]
 [connection signal="hit" from="Player" to="Control" method="_on_Player_hit"]
 [connection signal="hunger" from="Player" to="Control" method="_on_Player_hunger"]
@@ -95,4 +94,3 @@ position = Vector2( 193.853, 214.531 )
 [connection signal="body_entered" from="Bin" to="Bin" method="_on_Bin_body_entered"]
 [connection signal="body_exited" from="Bin" to="Player" method="_on_Bin_body_exited"]
 [connection signal="body_exited" from="Bin" to="Bin" method="_on_Bin_body_exited"]
-[connection signal="body_entered" from="Gun" to="Gun" method="_on_Area2D_body_entered"]
