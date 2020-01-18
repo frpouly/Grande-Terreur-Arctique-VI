@@ -2,7 +2,7 @@ extends KinematicBody2D
 
 signal eaten
 
-const WEAPON = preload("res://Weapon.tscn")
+const WEAPON = preload("res://pickable/Weapon.tscn")
 const MOVE_SPEED = 200
 
 var weapon

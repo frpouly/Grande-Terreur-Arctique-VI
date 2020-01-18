@@ -5,13 +5,12 @@ signal hit
 signal hunger
 signal eaten
 
-const MOVE_SPEED = 300
+export var MOVE_SPEED = 100
 
 var weapon = null
 var health = 100
 var hunger = 5000
 var usable = null
-onready var raycast = $RayCast2D
 
 var TEMPO_WEAPON_CHANGE = 2.0
 var weapon_changed = 0.0
@@ -31,8 +30,18 @@ func _physics_process(delta):
 		move_vec.x -= 1
 	if Input.is_action_pressed("move_right"):
 		move_vec.x += 1
-	move_vec = move_vec.normalized()
-	move_and_collide(move_vec * MOVE_SPEED * delta)
+	
+	
+	var velocity = move_vec.normalized() * MOVE_SPEED
+	var collision = move_and_collide(velocity * delta)
+	if collision:
+		velocity = velocity.slide(collision.normal)
+	
+	# using move_and_slide
+	velocity = move_and_slide(velocity)
+	
+	
+	
 	hunger-=1
 	if(hunger%50==0):
 		emit_signal("hunger")

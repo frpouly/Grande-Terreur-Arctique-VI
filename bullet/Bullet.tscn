@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Bullet.gd" type="Script" id=1]
-[ext_resource path="res://bullets-png-image-5a3580b2e62f41.3255240515134557949428.jpg" type="Texture" id=2]
-[ext_resource path="res://Assets/sounds/guns/9mm.wav" type="AudioStream" id=3]
+[ext_resource path="res://bullet/Bullet.gd" type="Script" id=1]
+[ext_resource path="res://assets/bullets-png-image-5a3580b2e62f41.3255240515134557949428.jpg" type="Texture" id=2]
+[ext_resource path="res://assets/sounds/guns/9mm.wav" type="AudioStream" id=3]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 5.06781

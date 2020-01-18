@@ -1,4 +1,4 @@
-extends "res://Weapon.gd"
+extends "res://pickable/Weapon.gd"
 
 # Declare member variables here. Examples:
 # var a = 2

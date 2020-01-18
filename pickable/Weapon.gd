@@ -1,6 +1,6 @@
-extends "res://Pickable.gd"
+extends "res://pickable/Pickable.gd"
 
-const BULLET = preload("res://Bullet.tscn")
+const BULLET = preload("res://bullet/Bullet.tscn")
 
 # Declare member variables here. Examples:
 # var a = 2

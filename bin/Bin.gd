@@ -1,6 +1,6 @@
 extends Area2D
 
-const FISH = preload("res://Pickable.tscn")
+const FISH = preload("res://pickable/Pickable.tscn")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

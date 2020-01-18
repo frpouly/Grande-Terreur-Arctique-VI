@@ -10,10 +10,11 @@
 [ext_resource path="res://Assets/PNG/001ThreeBlackStars.png" type="Texture" id=8]
 [ext_resource path="res://Assets/PNG/001ThreeStars.png" type="Texture" id=9]
 [ext_resource path="res://Assets/PNG/001_Poissons.png" type="Texture" id=10]
-[ext_resource path="res://Uzi.tscn" type="PackedScene" id=11]
+[ext_resource path="res://pickable/Uzi.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Assets/sounds/guns/9mm.wav" type="AudioStream" id=12]
 [ext_resource path="res://Zombie.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Bin.tscn" type="PackedScene" id=14]
+
 
 [node name="World" type="Node2D"]
 script = ExtResource( 1 )
