@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=54 format=2]
 
 [ext_resource path="res://carte/World.gd" type="Script" id=1]
 [ext_resource path="res://player/Player.tscn" type="PackedScene" id=2]
@@ -12,8 +12,113 @@
 [ext_resource path="res://assets/PNG/001_Poissons.png" type="Texture" id=10]
 [ext_resource path="res://pickable/Uzi.tscn" type="PackedScene" id=11]
 [ext_resource path="res://assets/sounds/guns/9mm.wav" type="AudioStream" id=12]
-[ext_resource path="res://enemies/Zombie.tscn" type="PackedScene" id=13]
-[ext_resource path="res://bin/Bin.tscn" type="PackedScene" id=14]
+[ext_resource path="res://enemies/Habitants.tscn" type="PackedScene" id=13]
+[ext_resource path="res://assets/les boys/Police1/left/IL.png" type="Texture" id=14]
+[ext_resource path="res://assets/les boys/Police1/left/II.png" type="Texture" id=15]
+[ext_resource path="res://assets/les boys/Police1/left/JI.png" type="Texture" id=16]
+[ext_resource path="res://assets/les boys/Police1/right/II.png" type="Texture" id=17]
+[ext_resource path="res://assets/les boys/Police1/right/IL.png" type="Texture" id=18]
+[ext_resource path="res://assets/les boys/Police1/right/JI.png" type="Texture" id=19]
+[ext_resource path="res://assets/les boys/Police1/back/II.png" type="Texture" id=20]
+[ext_resource path="res://assets/les boys/Police1/back/IL.png" type="Texture" id=21]
+[ext_resource path="res://assets/les boys/Police1/back/JI.png" type="Texture" id=22]
+[ext_resource path="res://assets/les boys/Police1/face/II.png" type="Texture" id=23]
+[ext_resource path="res://assets/les boys/Police1/face/IL.png" type="Texture" id=24]
+[ext_resource path="res://assets/les boys/Police1/face/JI.png" type="Texture" id=25]
+[ext_resource path="res://assets/les boys/barbeblue/left/IL.png" type="Texture" id=26]
+[ext_resource path="res://assets/les boys/barbeblue/left/II.png" type="Texture" id=27]
+[ext_resource path="res://assets/les boys/barbeblue/left/JI.png" type="Texture" id=28]
+[ext_resource path="res://assets/les boys/barbeblue/right/JI.png" type="Texture" id=29]
+[ext_resource path="res://assets/les boys/barbeblue/right/II.png" type="Texture" id=30]
+[ext_resource path="res://assets/les boys/barbeblue/right/IL.png" type="Texture" id=31]
+[ext_resource path="res://assets/les boys/barbeblue/back/II.png" type="Texture" id=32]
+[ext_resource path="res://assets/les boys/barbeblue/back/IL.png" type="Texture" id=33]
+[ext_resource path="res://assets/les boys/barbeblue/back/JI.png" type="Texture" id=34]
+[ext_resource path="res://assets/les boys/barbeblue/face/II.png" type="Texture" id=35]
+[ext_resource path="res://assets/les boys/barbeblue/face/IL.png" type="Texture" id=36]
+[ext_resource path="res://assets/les boys/barbeblue/face/JI.png" type="Texture" id=37]
+[ext_resource path="res://assets/les boys/blackBarbblue/left/II.png" type="Texture" id=38]
+[ext_resource path="res://assets/les boys/blackBarbblue/left/IL.png" type="Texture" id=39]
+[ext_resource path="res://assets/les boys/blackBarbblue/left/JI.png" type="Texture" id=40]
+[ext_resource path="res://assets/les boys/blackBarbblue/right/II.png" type="Texture" id=41]
+[ext_resource path="res://assets/les boys/blackBarbblue/right/IL.png" type="Texture" id=42]
+[ext_resource path="res://assets/les boys/blackBarbblue/right/JI.png" type="Texture" id=43]
+[ext_resource path="res://assets/les boys/blackBarbblue/back/II.png" type="Texture" id=44]
+[ext_resource path="res://assets/les boys/blackBarbblue/back/IL.png" type="Texture" id=45]
+[ext_resource path="res://assets/les boys/blackBarbblue/back/JI.png" type="Texture" id=46]
+[ext_resource path="res://assets/les boys/blackBarbblue/face/II.png" type="Texture" id=47]
+[ext_resource path="res://assets/les boys/blackBarbblue/face/IL.png" type="Texture" id=48]
+[ext_resource path="res://assets/les boys/blackBarbblue/face/JI.png" type="Texture" id=49]
+[ext_resource path="res://bin/Bin.tscn" type="PackedScene" id=50]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 15 ) ],
+"loop": true,
+"name": "left",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 17 ), ExtResource( 18 ), ExtResource( 17 ), ExtResource( 19 ) ],
+"loop": true,
+"name": "right",
+"speed": 2.0
+}, {
+"frames": [ ExtResource( 20 ), ExtResource( 21 ), ExtResource( 20 ), ExtResource( 22 ) ],
+"loop": true,
+"name": "up",
+"speed": 1.0
+}, {
+"frames": [ ExtResource( 23 ), ExtResource( 24 ), ExtResource( 23 ), ExtResource( 25 ) ],
+"loop": true,
+"name": "down",
+"speed": 1.0
+} ]
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 26 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 27 ) ],
+"loop": true,
+"name": "left",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 29 ), ExtResource( 30 ), ExtResource( 31 ), ExtResource( 30 ) ],
+"loop": true,
+"name": "right",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 32 ), ExtResource( 33 ), ExtResource( 32 ), ExtResource( 34 ) ],
+"loop": true,
+"name": "up",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 35 ), ExtResource( 36 ), ExtResource( 35 ), ExtResource( 37 ) ],
+"loop": true,
+"name": "down",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ ExtResource( 38 ), ExtResource( 39 ), ExtResource( 38 ), ExtResource( 40 ) ],
+"loop": true,
+"name": "left",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 41 ), ExtResource( 42 ), ExtResource( 41 ), ExtResource( 43 ) ],
+"loop": true,
+"name": "right",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 44 ), ExtResource( 45 ), ExtResource( 44 ), ExtResource( 46 ) ],
+"loop": true,
+"name": "up",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 47 ), ExtResource( 48 ), ExtResource( 47 ), ExtResource( 49 ) ],
+"loop": true,
+"name": "down",
+"speed": 5.0
+} ]
 
 [node name="World" type="Node2D"]
 script = ExtResource( 1 )
@@ -35,6 +140,9 @@ autostart = true
 position = Vector2( 154.586, 270.122 )
 
 [node name="Control" parent="." instance=ExtResource( 5 )]
+margin_left = -1.0
+margin_right = 1023.0
+margin_bottom = 600.0
 rect_min_size = Vector2( 1024, 600 )
 
 [node name="TextureProgress2" type="TextureProgress" parent="Control"]
@@ -91,22 +199,40 @@ position = Vector2( 257.781, 435.988 )
 [node name="Sound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 12 )
 
-[node name="Zombies" type="Node2D" parent="."]
+[node name="Mechants" type="Node2D" parent="."]
 
-[node name="Zombie" parent="Zombies" instance=ExtResource( 13 )]
+[node name="Police1" parent="Mechants" instance=ExtResource( 13 )]
 position = Vector2( 907.396, 548.029 )
+scale = Vector2( 3, 3 )
 
-[node name="Zombie2" parent="Zombies" instance=ExtResource( 13 )]
+[node name="AnimatedSprite2" type="AnimatedSprite" parent="Mechants/Police1"]
+frames = SubResource( 1 )
+animation = "right"
+frame = 1
+playing = true
+
+[node name="Police2" parent="Mechants" instance=ExtResource( 13 )]
 position = Vector2( 847.822, 73.2498 )
+scale = Vector2( 3, 3 )
 
-[node name="Zombie3" parent="Zombies" instance=ExtResource( 13 )]
+[node name="AnimatedSprite2" type="AnimatedSprite" parent="Mechants/Police2"]
+frames = SubResource( 2 )
+animation = "right"
+
+[node name="Police3" parent="Mechants" instance=ExtResource( 13 )]
 position = Vector2( 933.715, 226.638 )
+scale = Vector2( 3, 3 )
 
-[node name="Bin" parent="." instance=ExtResource( 14 )]
+[node name="AnimatedSprite2" type="AnimatedSprite" parent="Mechants/Police3"]
+position = Vector2( 0, 3.17337 )
+frames = SubResource( 3 )
+animation = "right"
+
+[node name="Bin" parent="." instance=ExtResource( 50 )]
 position = Vector2( 42.2576, 439.936 )
 [connection signal="body_entered" from="Uzi" to="Uzi" method="_on_Area2D_body_entered"]
-[connection signal="body_entered" from="Bin" to="Player" method="_on_Bin_body_entered"]
 [connection signal="body_entered" from="Bin" to="Bin" method="_on_Bin_body_entered"]
-[connection signal="body_exited" from="Bin" to="Player" method="_on_Bin_body_exited"]
+[connection signal="body_entered" from="Bin" to="Player" method="_on_Bin_body_entered"]
 [connection signal="body_exited" from="Bin" to="Bin" method="_on_Bin_body_exited"]
+[connection signal="body_exited" from="Bin" to="Player" method="_on_Bin_body_exited"]
 [connection signal="trasher" from="Bin" to="Control" method="_on_Bin_trasher"]

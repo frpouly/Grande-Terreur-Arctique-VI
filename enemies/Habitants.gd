@@ -25,11 +25,18 @@ func _physics_process(delta):
 	vec_to_player = vec_to_player.normalized()
 	global_rotation = atan2(vec_to_player.y, vec_to_player.x)
 	move_and_collide(vec_to_player * MOVE_SPEED * delta)
-	
-	if raycast.is_colliding():
-		var coll = raycast.get_collider()
-		if coll.name == "Player":
-			coll.kill()
+	if(0.75<global_rotation || global_rotation>=-0.75):
+		$AnimatedSprite.play("right")
+	elif(-0.75<global_rotation || global_rotation>=-2.25):
+		$AnimatedSprite.play("up")
+	elif(global_rotation<2.25 || global_rotation>=2.25):
+		$AnimatedSprite.play("left")
+	else:
+		$AnimatedSprite.play("down")
+	#if raycast.is_colliding():
+		#var coll = raycast.get_collider()
+		#if coll.name == "Player":
+		#	coll.kill()
 
 func eaten():
 	emit_signal("eaten")
