@@ -1,7 +1,7 @@
 [gd_scene load_steps=37 format=2]
 
-[ext_resource path="res://Player.gd" type="Script" id=1]
-[ext_resource path="res://soldier.png" type="Texture" id=2]
+[ext_resource path="res://player/Player.gd" type="Script" id=1]
+[ext_resource path="res://assets/soldier.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Grougrou/left/1.png" type="Texture" id=3]
 [ext_resource path="res://Assets/Grougrou/left/2.png" type="Texture" id=4]
 [ext_resource path="res://Assets/Grougrou/left/3.png" type="Texture" id=5]
@@ -34,6 +34,8 @@
 [ext_resource path="res://Assets/Grougrou/down/6.png" type="Texture" id=32]
 [ext_resource path="res://Assets/Grougrou/down/7.png" type="Texture" id=33]
 [ext_resource path="res://Assets/Grougrou/down/8.png" type="Texture" id=34]
+
+
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 20.0

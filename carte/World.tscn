@@ -104,12 +104,9 @@ position = Vector2( 933.715, 226.638 )
 
 [node name="Bin" parent="." instance=ExtResource( 14 )]
 position = Vector2( 42.2576, 439.936 )
-[connection signal="eaten" from="Player" to="Control" method="_on_Player_eaten"]
-[connection signal="hit" from="Player" to="Control" method="_on_Player_hit"]
-[connection signal="hunger" from="Player" to="Control" method="_on_Player_hunger"]
 [connection signal="body_entered" from="Uzi" to="Uzi" method="_on_Area2D_body_entered"]
-[connection signal="body_entered" from="Bin" to="Bin" method="_on_Bin_body_entered"]
 [connection signal="body_entered" from="Bin" to="Player" method="_on_Bin_body_entered"]
-[connection signal="body_exited" from="Bin" to="Bin" method="_on_Bin_body_exited"]
+[connection signal="body_entered" from="Bin" to="Bin" method="_on_Bin_body_entered"]
 [connection signal="body_exited" from="Bin" to="Player" method="_on_Bin_body_exited"]
+[connection signal="body_exited" from="Bin" to="Bin" method="_on_Bin_body_exited"]
 [connection signal="trasher" from="Bin" to="Control" method="_on_Bin_trasher"]
