@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 [gd_scene load_steps=12 format=2]
+=======
+[gd_scene load_steps=10 format=2]
+>>>>>>> 1436be6956dab3806fac01f04c9446e4ff0f756c
 
 [ext_resource path="res://World.gd" type="Script" id=1]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=2]
@@ -7,10 +11,15 @@
 [ext_resource path="res://Lifebar.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Assets/PNG/blue_button13.png" type="Texture" id=6]
 [ext_resource path="res://Assets/PNG/blue_button01.png" type="Texture" id=7]
+<<<<<<< HEAD
 [ext_resource path="res://Assets/PNG/001ThreeBlackStars.png" type="Texture" id=8]
 [ext_resource path="res://Assets/PNG/001ThreeStars.png" type="Texture" id=9]
 [ext_resource path="res://fishbar3.png" type="Texture" id=10]
 [ext_resource path="res://Zombie.tscn" type="PackedScene" id=11]
+=======
+[ext_resource path="res://Uzi.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Assets/sounds/guns/9mm.wav" type="AudioStream" id=9]
+>>>>>>> 1436be6956dab3806fac01f04c9446e4ff0f756c
 
 [node name="World" type="Node2D"]
 script = ExtResource( 1 )
@@ -39,6 +48,7 @@ value = 80.0
 texture_under = ExtResource( 6 )
 texture_progress = ExtResource( 7 )
 
+<<<<<<< HEAD
 [node name="TextureProgress3" type="TextureProgress" parent="Control"]
 margin_left = -180.049
 margin_top = -171.475
@@ -71,3 +81,12 @@ position = Vector2( 933.715, 226.638 )
 [connection signal="eaten" from="Player" to="Control" method="_on_Player_eaten"]
 [connection signal="hit" from="Player" to="Control" method="_on_Player_hit"]
 [connection signal="hunger" from="Player" to="Control" method="_on_Player_hunger"]
+=======
+[node name="Uzi" parent="." instance=ExtResource( 8 )]
+position = Vector2( 257.781, 435.988 )
+
+[node name="Sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 9 )
+[connection signal="hit" from="Player" to="Control" method="_on_Player_hit"]
+[connection signal="body_entered" from="Uzi" to="Uzi" method="_on_Area2D_body_entered"]
+>>>>>>> 1436be6956dab3806fac01f04c9446e4ff0f756c

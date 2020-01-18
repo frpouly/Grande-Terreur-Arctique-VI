@@ -7,6 +7,9 @@ func _process(delta):
     move(delta)
     deadly+=delta
     removeWhenOffScreen()
+	
+func _ready():
+	get_node("../Sound").play()
 
 func move(delta): 
 	#position = position + Vector2(cos(rotation_degrees), -sin(rotation_degrees)) * (50 * delta)

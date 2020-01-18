@@ -6,8 +6,11 @@ const BULLET = preload("res://Bullet.tscn")
 # var a = 2
 # var b = "text"
 
-const RELOAD_TIME = 0.5
+var reload_time = 2.0
 var reloading = 0
+var magazine_capacity = 12
+var nb_bullets_magazine = 12
+var bullets_total = 120
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -16,19 +19,23 @@ func _ready():
 func _on_Area2D_body_entered(body):
 	if(body.has_method("pickup_weapon")):
 		body.pickup_weapon(self)
-		get_parent().remove_child(self)
-		body.add_child(self)
-		position = Vector2(0, 0)
 		
 		
 func fire():
-	if(reloading >= RELOAD_TIME):
+	if(reloading >= reload_time and nb_bullets_magazine > 0):
 		var bullet = BULLET.instance()
 		bullet.global_position = global_position
 		bullet.global_rotation = global_rotation
 		get_parent().get_parent().add_child(bullet)
 		reloading = 0
-
+		nb_bullets_magazine = nb_bullets_magazine - 1
+	
+func reload():
+	if(bullets_total < magazine_capacity):
+		nb_bullets_magazine = bullets_total
+	else:
+		nb_bullets_magazine += magazine_capacity
+	bullets_total -= nb_bullets_magazine
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
