@@ -2,11 +2,14 @@ extends KinematicBody2D
 class_name Player
 
 signal hit
+signal hunger
+signal eaten
 
 const MOVE_SPEED = 300
 
 var weapon = null
 var health = 100
+var hunger = 10000
 onready var raycast = $RayCast2D
 
 func _ready():
@@ -26,6 +29,9 @@ func _physics_process(delta):
 		move_vec.x += 1
 	move_vec = move_vec.normalized()
 	move_and_collide(move_vec * MOVE_SPEED * delta)
+	hunger-=1
+	if(hunger%50==0):
+		emit_signal("hunger")
 	
 	var look_vec = get_global_mouse_position() - global_position
 	global_rotation = atan2(look_vec.y, look_vec.x)
@@ -40,11 +46,12 @@ func _physics_process(delta):
 func kill():
 	health-=10;
 	emit_signal("hit",health)
-	if(health<0):
+	if(health<=0 || hunger<0):
 		get_tree().reload_current_scene()
 	
 
 func pickup():
+	emit_signal("eaten")
 	print("Picked Up")
 
 func pickup_weapon(var w):

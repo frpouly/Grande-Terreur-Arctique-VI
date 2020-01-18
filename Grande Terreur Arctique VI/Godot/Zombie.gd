@@ -1,5 +1,7 @@
 extends KinematicBody2D
 
+signal eaten
+
 const WEAPON = preload("res://Weapon.tscn")
 const MOVE_SPEED = 200
 
@@ -13,6 +15,7 @@ func _ready():
 	add_to_group("zombies")
 	weapon = WEAPON.instance()
 	add_child(weapon)
+	
 
 func _physics_process(delta):
 	if player == null:
@@ -29,6 +32,7 @@ func _physics_process(delta):
 			coll.kill()
 
 func eaten():
+	emit_signal("eaten")
 	queue_free()
 	
 func _process(delta):
