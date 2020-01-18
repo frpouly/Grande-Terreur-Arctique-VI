@@ -39,7 +39,7 @@ func _process(delta):
     fire()
 
 func fire():
-	weapon.fire()
+	weapon.fire(global_rotation)
 
 func set_player(p):
 	player = p

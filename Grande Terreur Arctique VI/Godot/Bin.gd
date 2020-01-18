@@ -2,7 +2,7 @@ extends Area2D
 
 const FISH = preload("res://Pickable.tscn")
 
-
+signal trasher
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
@@ -12,6 +12,7 @@ const FISH = preload("res://Pickable.tscn")
 
 func empty():
 	var fish = FISH.instance()
+	emit_signal("trasher")
 	fish.global_position = global_position;
 	position += Vector2(0, 30)
 	get_parent().add_child(fish)

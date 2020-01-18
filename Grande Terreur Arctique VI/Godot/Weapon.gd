@@ -18,11 +18,11 @@ func _on_Area2D_body_entered(body):
 		body.pickup_weapon(self)
 		
 		
-func fire():
+func fire(rotation):
 	if(reloading >= reload_time and nb_bullets_magazine > 0):
 		var bullet = BULLET.instance()
 		bullet.global_position = global_position
-		bullet.global_rotation = global_rotation
+		bullet.global_rotation = rotation
 		get_parent().get_parent().add_child(bullet)
 		reloading = 0
 		nb_bullets_magazine = nb_bullets_magazine - 1

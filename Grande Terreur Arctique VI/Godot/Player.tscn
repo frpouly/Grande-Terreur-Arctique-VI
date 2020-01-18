@@ -1,10 +1,65 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=37 format=2]
 
 [ext_resource path="res://Player.gd" type="Script" id=1]
 [ext_resource path="res://soldier.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Grougrou/left/1.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Grougrou/left/2.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Grougrou/left/3.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Grougrou/left/4.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Grougrou/left/5.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Grougrou/left/6.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Grougrou/left/7.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Grougrou/left/8.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Grougrou/right/1.png" type="Texture" id=11]
+[ext_resource path="res://Assets/Grougrou/right/2.png" type="Texture" id=12]
+[ext_resource path="res://Assets/Grougrou/right/3.png" type="Texture" id=13]
+[ext_resource path="res://Assets/Grougrou/right/4.png" type="Texture" id=14]
+[ext_resource path="res://Assets/Grougrou/right/5.png" type="Texture" id=15]
+[ext_resource path="res://Assets/Grougrou/right/6.png" type="Texture" id=16]
+[ext_resource path="res://Assets/Grougrou/right/7.png" type="Texture" id=17]
+[ext_resource path="res://Assets/Grougrou/right/8.png" type="Texture" id=18]
+[ext_resource path="res://Assets/Grougrou/up/1.png" type="Texture" id=19]
+[ext_resource path="res://Assets/Grougrou/up/2.png" type="Texture" id=20]
+[ext_resource path="res://Assets/Grougrou/up/3.png" type="Texture" id=21]
+[ext_resource path="res://Assets/Grougrou/up/4.png" type="Texture" id=22]
+[ext_resource path="res://Assets/Grougrou/up/5.png" type="Texture" id=23]
+[ext_resource path="res://Assets/Grougrou/up/6.png" type="Texture" id=24]
+[ext_resource path="res://Assets/Grougrou/up/7.png" type="Texture" id=25]
+[ext_resource path="res://Assets/Grougrou/up/8.png" type="Texture" id=26]
+[ext_resource path="res://Assets/Grougrou/down/1.png" type="Texture" id=27]
+[ext_resource path="res://Assets/Grougrou/down/2.png" type="Texture" id=28]
+[ext_resource path="res://Assets/Grougrou/down/3.png" type="Texture" id=29]
+[ext_resource path="res://Assets/Grougrou/down/4.png" type="Texture" id=30]
+[ext_resource path="res://Assets/Grougrou/down/5.png" type="Texture" id=31]
+[ext_resource path="res://Assets/Grougrou/down/6.png" type="Texture" id=32]
+[ext_resource path="res://Assets/Grougrou/down/7.png" type="Texture" id=33]
+[ext_resource path="res://Assets/Grougrou/down/8.png" type="Texture" id=34]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 20.0
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ) ],
+"loop": true,
+"name": "left",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ) ],
+"loop": true,
+"name": "right",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 26 ) ],
+"loop": true,
+"name": "up",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 27 ), ExtResource( 28 ), ExtResource( 29 ), ExtResource( 30 ), ExtResource( 31 ), ExtResource( 32 ), ExtResource( 33 ), ExtResource( 34 ) ],
+"loop": true,
+"name": "down",
+"speed": 5.0
+} ]
 
 [node name="Player" type="KinematicBody2D"]
 script = ExtResource( 1 )
@@ -13,9 +68,17 @@ script = ExtResource( 1 )
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
+visible = false
 position = Vector2( 17.5658, 0.35849 )
 texture = ExtResource( 2 )
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
 enabled = true
 cast_to = Vector2( 2000, 0 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+scale = Vector2( 1.01334, 1 )
+frames = SubResource( 2 )
+animation = "right"
+frame = 5
+playing = true
