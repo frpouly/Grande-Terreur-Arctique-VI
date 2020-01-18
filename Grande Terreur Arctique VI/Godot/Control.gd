@@ -1,5 +1,7 @@
 extends Control
 
+
+
 func _ready():
 	$TextureProgress2.value=100
 	$TextureProgress3.value=0
@@ -15,6 +17,7 @@ func _on_Zombie_eaten():
 
 func _on_Player_hunger():
 	$TextureProgress4.value-=1
+
 
 func _on_Player_eaten():
 	$TextureProgress4.value+=20

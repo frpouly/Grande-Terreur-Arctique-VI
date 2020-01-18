@@ -9,7 +9,7 @@ func _process(delta):
     removeWhenOffScreen()
 	
 func _ready():
-	$Sound.play()
+	get_node("../Sound").play()
 
 func move(delta): 
 	#position = position + Vector2(cos(rotation_degrees), -sin(rotation_degrees)) * (50 * delta)
