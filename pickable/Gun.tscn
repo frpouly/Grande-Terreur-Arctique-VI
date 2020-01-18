@@ -1,8 +1,7 @@
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://Gun.gd" type="Script" id=1]
-[ext_resource path="res://Assets/guns/obj_mtl/pistol-coonan.obj" type="ArrayMesh" id=2]
-[ext_resource path="res://Assets/guns/obj_mtl/Black.png" type="Texture" id=3]
+[ext_resource path="res://assets/guns/obj_mtl/pistol-coonan.obj" type="ArrayMesh" id=1]
+[ext_resource path="res://assets/guns/obj_mtl/Black.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 14.8089, 10.5023 )
