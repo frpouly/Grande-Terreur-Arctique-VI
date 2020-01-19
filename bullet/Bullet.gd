@@ -1,13 +1,11 @@
 extends Area2D
 
 var speed = 10
-var deadly = 0.0
 
 var damage
 
 func _process(delta):
     move(delta)
-    deadly+=delta
     removeWhenOffScreen()
 	
 func _ready():
@@ -23,8 +21,5 @@ func removeWhenOffScreen():
         queue_free()
 
 func _on_Area2D_body_entered(body):
-	if(deadly>0.05):
-		if(body.has_method("eaten")):
-    	    body.eaten()
-		if(body.has_method("kill")):
-    	    body.kill()
+	if(body.has_method("hitted")):
+		body.hitted(damage)
