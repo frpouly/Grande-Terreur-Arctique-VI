@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=2]
+[gd_scene load_steps=38 format=2]
 
 [ext_resource path="res://player/Player.gd" type="Script" id=1]
 [ext_resource path="res://assets/soldier.png" type="Texture" id=2]
@@ -34,14 +34,7 @@
 [ext_resource path="res://assets/Grougrou/down/6.png" type="Texture" id=32]
 [ext_resource path="res://assets/Grougrou/down/7.png" type="Texture" id=33]
 [ext_resource path="res://assets/Grougrou/down/8.png" type="Texture" id=34]
-
-
-
-
-
-
-
-
+[ext_resource path="res://ui/Ui.tscn" type="PackedScene" id=35]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 20.0
@@ -70,6 +63,7 @@ animations = [ {
 } ]
 
 [node name="Player" type="KinematicBody2D"]
+collision_mask = 6
 script = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -79,6 +73,7 @@ shape = SubResource( 1 )
 visible = false
 position = Vector2( 17.5658, 0.35849 )
 texture = ExtResource( 2 )
+
 [node name="RayCast2D" type="RayCast2D" parent="."]
 enabled = true
 cast_to = Vector2( 2000, 0 )
@@ -87,5 +82,18 @@ cast_to = Vector2( 2000, 0 )
 scale = Vector2( 1.01334, 1 )
 frames = SubResource( 2 )
 animation = "right"
-frame = 5
+frame = 2
 playing = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+zoom = Vector2( 0.5, 0.5 )
+limit_left = 0
+limit_top = 0
+limit_right = 1392
+limit_bottom = 1250
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Ui" parent="CanvasLayer" instance=ExtResource( 35 )]
+visible = false

@@ -27,7 +27,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Gamejam"
-run/main_scene="res://carte/World.tscn"
+run/main_scene="res://carte/Carte.tscn"
 config/icon="res://icon.png"
 
 [importer_defaults]
@@ -101,6 +101,7 @@ reload={
 2d_physics/layer_2="walls"
 2d_physics/layer_3="enemy"
 2d_physics/layer_4="map_border"
+2d_physics/layer_5="pickups"
 
 [rendering]
 
