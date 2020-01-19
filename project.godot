@@ -27,7 +27,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Gamejam"
-run/main_scene="res://carte/World.tscn"
+run/main_scene="res://carte/Carte.tscn"
 config/icon="res://icon.png"
 
 [importer_defaults]
@@ -105,7 +105,6 @@ reload={
 
 [rendering]
 
-quality/driver/driver_name="GLES2"
 vram_compression/import_etc=true
 vram_compression/import_etc2=false
 environment/default_environment="res://default_env.tres"

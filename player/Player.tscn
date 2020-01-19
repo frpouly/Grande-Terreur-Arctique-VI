@@ -82,12 +82,16 @@ cast_to = Vector2( 2000, 0 )
 scale = Vector2( 1.01334, 1 )
 frames = SubResource( 2 )
 animation = "right"
-frame = 5
+frame = 2
 playing = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
 zoom = Vector2( 0.5, 0.5 )
+limit_left = 0
+limit_top = 0
+limit_right = 1392
+limit_bottom = 1250
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
