@@ -1,11 +1,9 @@
 extends Area2D
 class_name Bin
 
+const FISH = preload("res://pickable/Pickable.tscn")
 
 func empty():
-#fish.global_position = global_position;
-#	position += Vector2(0, 30)
-#	get_parent().add_child(fish)
 	queue_free()
 
 func _on_Bin_body_entered(body):

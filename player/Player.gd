@@ -19,6 +19,9 @@ var weapon_changed = 0.0
 
 onready var HungerTimer : Timer = get_node("HungerTimer")
 
+const FISH = preload("res://pickable/Pickable.tscn")
+
+
 func _ready():
 	connect("hit", get_node("CanvasLayer/Ui"), "_on_Player_hit")
 	connect("hunger", get_node("CanvasLayer/Ui"), "_on_Player_hunger")
@@ -105,6 +108,7 @@ func reload():
 	if(weapon != null):
 		weapon.reload()
 		emit_signal("bullets_changed", weapon.nb_bullets_magazine, weapon.bullets_total)
+		$AudioStreamPlayer2D2.play()
 
 func fire():
 	if(weapon != null):
@@ -116,6 +120,9 @@ func use():
 	if(usable != null):
 		usable.empty()
 		usable = null
+	#var fish = FISH.instance()
+	#fish.global_position = global_position;
+	#position += Vector2(0, 30)
 
     #var coll = bullet.get_collider()
     #if (coll.has_method("kill") and bullet.is_colliding()):
@@ -148,3 +155,4 @@ func _on_Player_bin_trasher():
 func eat(habitant):
 	hunger = max_hunger
 	habitant.queue_free()
+	$AudioStreamPlayer2D.play()
