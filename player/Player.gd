@@ -139,6 +139,6 @@ func _on_HungerTimer_timeout():
 	if hunger <= 0:
 		kill()
 
-func _on_Area2D_body_entered(body):
+func eat(habitant):
 	hunger = max_hunger
-	body.queue_free()
+	habitant.queue_free()

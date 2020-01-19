@@ -36,7 +36,6 @@ func _physics_process(delta):
 			velocity = move_and_slide(velocity)
 	
 		if (path.size() > 0 && position.distance_to(path[0]) < 1):
-			print("remove")
 			path.remove(0)
 
 #func _physics_process(delta):
@@ -71,6 +70,9 @@ func _physics_process(delta):
 #		#var coll = raycast.get_collider()
 #		#if coll.name == "Player":
 #		#	coll.kill()
+	player = get_node("../../Player")
+	if player.get_global_position().distance_to(global_position) < 25:
+		player.eat(self)
 
 func hitted(var damage):
 	pv -= damage

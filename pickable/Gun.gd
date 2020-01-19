@@ -7,7 +7,7 @@ extends "res://pickable/Weapon.gd"
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	set_scale(Vector2(-1, 1))
-	reload_time = 2
+	reload_time = 1
 	bullets_total = 120
 	nb_bullets_magazine = 12
 	magazine_capacity = 12
