@@ -31,14 +31,21 @@ func fire(rotation):
 		get_tree().get_root().add_child(bullet)
 		reloading = 0
 		nb_bullets_magazine = nb_bullets_magazine - 1
-	
+
+
+var missing_bullets	
 func reload():
-	if(bullets_total < magazine_capacity):
-		nb_bullets_magazine = bullets_total
+	if(nb_bullets_magazine < magazine_capacity):
+		missing_bullets = magazine_capacity - nb_bullets_magazine
+		if(missing_bullets < bullets_total):
+			nb_bullets_magazine = magazine_capacity
+			bullets_total -= missing_bullets
+		else:
+			nb_bullets_magazine += bullets_total
+			bullets_total = 0
 	else:
-		nb_bullets_magazine += magazine_capacity
-	bullets_total -= nb_bullets_magazine
-	
+		print("clic")
+		#$clic.play()
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
