@@ -121,7 +121,6 @@ func use():
 
 
 func _on_Bin_body_entered(body):
-	print("entered")
 	if(body.has_method("use")):
     	    body.usable=self
 
@@ -139,4 +138,7 @@ func _on_HungerTimer_timeout():
 	
 	if hunger <= 0:
 		kill()
-	
+
+func _on_Area2D_body_entered(body):
+	hunger = max_hunger
+	body.queue_free()

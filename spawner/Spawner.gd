@@ -13,7 +13,6 @@ func _ready():
 
 func spawn(container):
 	cooldown-=1
-	print(cooldown)
 	if(cooldown <= 0 && instances<MAX_INSTANCES):
 		cooldown = 1000
 		instances+=1
