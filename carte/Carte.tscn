@@ -1,35 +1,36 @@
-[gd_scene load_steps=35 format=2]
+[gd_scene load_steps=36 format=2]
 
 [ext_resource path="res://carte/Carte.gd" type="Script" id=1]
 [ext_resource path="res://assets/new_tileset.tres" type="TileSet" id=2]
 [ext_resource path="res://player/Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://pickable/Uzi.tscn" type="PackedScene" id=4]
 [ext_resource path="res://bin/Bin.tscn" type="PackedScene" id=5]
-[ext_resource path="res://spawner/PolicierSpawner.tscn" type="PackedScene" id=6]
-[ext_resource path="res://spawner/PolicierSpawner1.gd" type="Script" id=7]
-[ext_resource path="res://spawner/PolicierSpawner2.gd" type="Script" id=8]
-[ext_resource path="res://spawner/CivilianSpawner2.tscn" type="PackedScene" id=9]
-[ext_resource path="res://spawner/CivilianSpawner3.tscn" type="PackedScene" id=10]
-[ext_resource path="res://spawner/CivilianSpawner3.gd" type="Script" id=11]
-[ext_resource path="res://spawner/CivilianSpawner4.tscn" type="PackedScene" id=12]
-[ext_resource path="res://spawner/CivilianSpawner4.gd" type="Script" id=13]
-[ext_resource path="res://spawner/CivilianSpawner5.tscn" type="PackedScene" id=14]
-[ext_resource path="res://spawner/CivilianSpawner5.gd" type="Script" id=15]
-[ext_resource path="res://spawner/CivilianSpawner6.tscn" type="PackedScene" id=16]
-[ext_resource path="res://spawner/CivilianSpawner6.gd" type="Script" id=17]
-[ext_resource path="res://spawner/CivilianSpawner.tscn" type="PackedScene" id=18]
-[ext_resource path="res://spawner/CivilianSpawner7.gd" type="Script" id=19]
-[ext_resource path="res://spawner/ChasseurSpawner2.tscn" type="PackedScene" id=20]
-[ext_resource path="res://spawner/ChasseurSpawner2.gd" type="Script" id=21]
-[ext_resource path="res://spawner/ChasseurSpawner.tscn" type="PackedScene" id=22]
-[ext_resource path="res://spawner/Army.tscn" type="PackedScene" id=23]
-[ext_resource path="res://spawner/ArmySpawner.gd" type="Script" id=24]
-[ext_resource path="res://spawner/ArmySpawner2.tscn" type="PackedScene" id=25]
-[ext_resource path="res://spawner/ArmySpawner2.gd" type="Script" id=26]
-[ext_resource path="res://spawner/ArmySpawner3.tscn" type="PackedScene" id=27]
-[ext_resource path="res://spawner/ArmySpawner3.gd" type="Script" id=28]
-[ext_resource path="res://assets/PNG/nordvpn-square-300x254.png" type="Texture" id=29]
-[ext_resource path="res://assets/PNG/index.jpg" type="Texture" id=30]
+[ext_resource path="res://medkit/Medkit.tscn" type="PackedScene" id=6]
+[ext_resource path="res://spawner/PolicierSpawner.tscn" type="PackedScene" id=7]
+[ext_resource path="res://spawner/PolicierSpawner1.gd" type="Script" id=8]
+[ext_resource path="res://spawner/PolicierSpawner2.gd" type="Script" id=9]
+[ext_resource path="res://spawner/CivilianSpawner2.tscn" type="PackedScene" id=10]
+[ext_resource path="res://spawner/CivilianSpawner3.tscn" type="PackedScene" id=11]
+[ext_resource path="res://spawner/CivilianSpawner3.gd" type="Script" id=12]
+[ext_resource path="res://spawner/CivilianSpawner4.tscn" type="PackedScene" id=13]
+[ext_resource path="res://spawner/CivilianSpawner4.gd" type="Script" id=14]
+[ext_resource path="res://spawner/CivilianSpawner5.tscn" type="PackedScene" id=15]
+[ext_resource path="res://spawner/CivilianSpawner5.gd" type="Script" id=16]
+[ext_resource path="res://spawner/CivilianSpawner6.tscn" type="PackedScene" id=17]
+[ext_resource path="res://spawner/CivilianSpawner6.gd" type="Script" id=18]
+[ext_resource path="res://spawner/CivilianSpawner.tscn" type="PackedScene" id=19]
+[ext_resource path="res://spawner/CivilianSpawner7.gd" type="Script" id=20]
+[ext_resource path="res://spawner/ChasseurSpawner2.tscn" type="PackedScene" id=21]
+[ext_resource path="res://spawner/ChasseurSpawner2.gd" type="Script" id=22]
+[ext_resource path="res://spawner/ChasseurSpawner.tscn" type="PackedScene" id=23]
+[ext_resource path="res://spawner/Army.tscn" type="PackedScene" id=24]
+[ext_resource path="res://spawner/ArmySpawner.gd" type="Script" id=25]
+[ext_resource path="res://spawner/ArmySpawner2.tscn" type="PackedScene" id=26]
+[ext_resource path="res://spawner/ArmySpawner2.gd" type="Script" id=27]
+[ext_resource path="res://spawner/ArmySpawner3.tscn" type="PackedScene" id=28]
+[ext_resource path="res://spawner/ArmySpawner3.gd" type="Script" id=29]
+[ext_resource path="res://assets/PNG/nordvpn-square-300x254.png" type="Texture" id=30]
+[ext_resource path="res://assets/PNG/index.jpg" type="Texture" id=31]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 559.532, 22.3152 )
@@ -170,70 +171,75 @@ scale = Vector2( 0.5, 0.5 )
 position = Vector2( 924.555, 786.361 )
 scale = Vector2( 0.5, 0.5 )
 
+[node name="Medkit" parent="pickups" instance=ExtResource( 6 )]
+position = Vector2( 1181.34, 222.154 )
+
 [node name="Spawns" type="Node" parent="."]
 
-[node name="PolicierSpawn" parent="Spawns" instance=ExtResource( 6 )]
+[node name="PolicierSpawn" parent="Spawns" instance=ExtResource( 7 )]
 position = Vector2( 647.678, 275.691 )
-script = ExtResource( 7 )
-
-[node name="PolicierSpawner" parent="Spawns" instance=ExtResource( 6 )]
-position = Vector2( 1024, 1024 )
 script = ExtResource( 8 )
 
-[node name="PolicierSpawner2" parent="Spawns" instance=ExtResource( 6 )]
+[node name="PolicierSpawner" parent="Spawns" instance=ExtResource( 7 )]
+position = Vector2( 1024, 1024 )
+script = ExtResource( 9 )
+
+[node name="PolicierSpawner2" parent="Spawns" instance=ExtResource( 7 )]
 position = Vector2( 600, 700 )
 
-[node name="CivilianSpawner" parent="Spawns" instance=ExtResource( 9 )]
+[node name="CivilianSpawner" parent="Spawns" instance=ExtResource( 10 )]
 position = Vector2( 250, 300 )
 
-[node name="CivilianSpawner2" parent="Spawns" instance=ExtResource( 10 )]
+[node name="CivilianSpawner2" parent="Spawns" instance=ExtResource( 11 )]
 position = Vector2( 500, 600 )
-script = ExtResource( 11 )
+script = ExtResource( 12 )
 
-[node name="CivilianSpawner3" parent="Spawns" instance=ExtResource( 12 )]
+[node name="CivilianSpawner3" parent="Spawns" instance=ExtResource( 13 )]
 position = Vector2( 900, 300 )
-script = ExtResource( 13 )
+script = ExtResource( 14 )
 
-[node name="CivilianSpawner4" parent="Spawns" instance=ExtResource( 14 )]
+[node name="CivilianSpawner4" parent="Spawns" instance=ExtResource( 15 )]
 position = Vector2( 1100, 800 )
-script = ExtResource( 15 )
+script = ExtResource( 16 )
 
-[node name="CivilianSpawner5" parent="Spawns" instance=ExtResource( 16 )]
+[node name="CivilianSpawner5" parent="Spawns" instance=ExtResource( 17 )]
 position = Vector2( 900, 750 )
-script = ExtResource( 17 )
+script = ExtResource( 18 )
 
-[node name="CivilianSpawner6" parent="Spawns" instance=ExtResource( 18 )]
+[node name="CivilianSpawner6" parent="Spawns" instance=ExtResource( 19 )]
 position = Vector2( 400, 1000 )
-script = ExtResource( 19 )
+script = ExtResource( 20 )
 
-[node name="ChasseurSpawner" parent="Spawns" instance=ExtResource( 20 )]
+[node name="ChasseurSpawner" parent="Spawns" instance=ExtResource( 21 )]
 position = Vector2( 400, 300 )
-script = ExtResource( 21 )
+script = ExtResource( 22 )
 
-[node name="ChasseurSpawner2" parent="Spawns" instance=ExtResource( 22 )]
+[node name="ChasseurSpawner2" parent="Spawns" instance=ExtResource( 23 )]
 position = Vector2( 400, 200 )
-script = ExtResource( 21 )
+script = ExtResource( 22 )
 
-[node name="ArmySpawner1" parent="Spawns" instance=ExtResource( 23 )]
+[node name="ArmySpawner1" parent="Spawns" instance=ExtResource( 24 )]
 position = Vector2( 900, 700 )
-script = ExtResource( 24 )
+script = ExtResource( 25 )
 
-[node name="ArmySpawner2" parent="Spawns" instance=ExtResource( 25 )]
+[node name="ArmySpawner2" parent="Spawns" instance=ExtResource( 26 )]
 position = Vector2( 700, 950 )
-script = ExtResource( 26 )
+script = ExtResource( 27 )
 
-[node name="ArmySpawner3" parent="Spawns" instance=ExtResource( 27 )]
+[node name="ArmySpawner3" parent="Spawns" instance=ExtResource( 28 )]
 position = Vector2( 1000, 790 )
-script = ExtResource( 28 )
+script = ExtResource( 29 )
 
 [node name="Enemies" type="Node2D" parent="."]
+position = Vector2( 365.901, 198.632 )
 
 [node name="nordvpn-square-300x254" type="Sprite" parent="."]
 position = Vector2( 855.801, 403.496 )
 scale = Vector2( 0.211817, 0.22186 )
-texture = ExtResource( 29 )
+texture = ExtResource( 30 )
 
 [node name="index" type="Sprite" parent="nordvpn-square-300x254"]
 position = Vector2( -299.436, 87.0018 )
-texture = ExtResource( 30 )
+texture = ExtResource( 31 )
 [connection signal="body_entered" from="pickups/Uzi" to="pickups/Uzi" method="_on_Area2D_body_entered"]
+[connection signal="body_entered" from="pickups/Medkit" to="pickups/Medkit" method="_on_Area2D_body_entered"]

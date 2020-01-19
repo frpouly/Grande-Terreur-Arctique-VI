@@ -12,7 +12,6 @@ func _on_Player_hit(health):
 	LifeBar.value=health
 
 func _process(delta):
-	print($HeatLevel.value)
 	$HeatLevel.value+=1
 	if($HeatLevel.value==3000):
 		_on_Wanted()

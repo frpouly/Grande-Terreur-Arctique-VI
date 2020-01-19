@@ -13,7 +13,6 @@ func _ready():
 	
 func _process(delta):
 	var look_vec = player.position - global_position
-	print(str(player.get_global_position().distance_to(global_position)))
 	if player.get_global_position().distance_to(global_position) < 300:
 		fire(look_vec)
 	

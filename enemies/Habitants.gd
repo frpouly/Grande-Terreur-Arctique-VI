@@ -81,3 +81,6 @@ func hitted(var damage):
 
 func set_player(p):
 	player = p
+	
+func heal(pv_plus):
+	pv = pv_plus

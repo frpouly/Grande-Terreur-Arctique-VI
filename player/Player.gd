@@ -141,10 +141,17 @@ func _on_HungerTimer_timeout():
 	if hunger <= 0:
 		kill()
 	
-func _on_Player_bin_trasher():
-	print("trashed")
+func _on_Player_bin_trasher():\
 	emit_signal("bin_trasher")
 
 func eat(habitant):
 	hunger = max_hunger
 	habitant.queue_free()
+	
+func heal(pv_plus):
+	print(str(health))
+	health += pv_plus
+	if(health > 500):
+		health = 500
+	print(str(health))
+	emit_signal("hit", health)
