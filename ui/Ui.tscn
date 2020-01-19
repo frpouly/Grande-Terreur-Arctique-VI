@@ -10,36 +10,49 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 1 )
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
-anchor_right = 1.0
-anchor_bottom = 1.0
-custom_constants/margin_right = 10
-custom_constants/margin_top = 10
-custom_constants/margin_left = 10
-custom_constants/margin_bottom = 10
-
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
-margin_left = 10.0
-margin_top = 10.0
-margin_right = 1014.0
-margin_bottom = 590.0
-
-[node name="Lifebar" parent="MarginContainer/VBoxContainer" instance=ExtResource( 2 )]
-margin_right = 1004.0
+[node name="Lifebar" parent="." instance=ExtResource( 2 )]
+margin_left = -1.22778
+margin_top = -1.22772
+margin_right = 2758.77
+margin_bottom = 1059.77
 value = 0.0
 
-[node name="HeatLevel" parent="MarginContainer/VBoxContainer" instance=ExtResource( 3 )]
-visible = false
-margin_left = 194.0
-margin_right = 2954.0
-rect_scale = Vector2( 1, 1 )
+[node name="HeatLevel" parent="." instance=ExtResource( 3 )]
+margin_left = 7.5445
+margin_top = 49.2876
+margin_right = 2767.54
+margin_bottom = 1110.29
+rect_scale = Vector2( 0.05, 0.05 )
 
-[node name="Hunger" parent="MarginContainer/VBoxContainer" instance=ExtResource( 4 )]
-anchor_right = 0.0
+[node name="Hunger" parent="." instance=ExtResource( 4 )]
+anchor_left = 1.0
 anchor_bottom = 0.0
-margin_top = 53.0
-margin_right = 1004.0
-margin_bottom = 139.0
-rect_scale = Vector2( 1, 1 )
-max_value = 10000.0
-value = 5000.0
+margin_left = -283.266
+margin_top = 1.29234
+margin_right = 281.734
+margin_bottom = 87.2923
+max_value = 5.0
+value = 5.0
+
+[node name="PopupPanel" type="PopupPanel" parent="."]
+visible = true
+margin_left = 207.0
+margin_right = 731.0
+margin_bottom = 82.0
+
+[node name="Label" type="Label" parent="PopupPanel"]
+margin_left = 4.0
+margin_top = 27.0
+margin_right = 520.0
+margin_bottom = 78.0
+align = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="PopupPanel"]
+margin_left = 64.0
+margin_top = 64.0
+margin_right = 519.0
+margin_bottom = 76.0
+
+[node name="Timer" type="Timer" parent="PopupPanel"]
+wait_time = 5.0
+[connection signal="timeout" from="PopupPanel/Timer" to="." method="_on_Timer_timeout"]
