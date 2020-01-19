@@ -24,6 +24,7 @@ func removeWhenOffScreen():
         queue_free()
 
 func _on_Area2D_body_entered(body):
+	
 	if(deadly <=0 && body.has_method("hitted")):
 		print("hitted")
 		body.hitted(damage)

@@ -120,6 +120,7 @@ func use():
 	if(usable != null):
 		usable.empty()
 		usable = null
+		pickup()
 	#var fish = FISH.instance()
 	#fish.global_position = global_position;
 	#position += Vector2(0, 30)
