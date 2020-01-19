@@ -2,7 +2,7 @@ extends Area2D
 
 var speed = 10
 
-var deadly = 10
+var deadly = 5
 
 var damage
 

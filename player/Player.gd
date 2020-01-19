@@ -123,7 +123,6 @@ func use():
 
 
 func _on_Bin_body_entered(body):
-	print("entered")
 	if(body.has_method("use")):
     	    body.usable=self
 
@@ -145,3 +144,7 @@ func _on_HungerTimer_timeout():
 func _on_Player_bin_trasher():
 	print("trashed")
 	emit_signal("bin_trasher")
+
+func eat(habitant):
+	hunger = max_hunger
+	habitant.queue_free()
