@@ -7,7 +7,7 @@ func _ready():
 	pass # Replace with function body.
 
 func spawn():
-	var body = instance_of.Instance()
+	var body = instance_of.instance()
 	get_tree().get_root().add_child(body)
-	body.position = position
+	body.global_position = global_position
 	return body

@@ -21,7 +21,7 @@ onready var HungerTimer : Timer = get_node("HungerTimer")
 func _ready():
 	connect("hit", get_node("CanvasLayer/Ui"), "_on_Player_hit")
 	connect("hunger", get_node("CanvasLayer/Ui"), "_on_Player_hunger")
-	connect("bullets_changed", get_node("CanvasLayer/UI"), "_on_Bullet_Changed");
+	connect("bullets_changed", get_node("CanvasLayer/Ui"), "_on_Bullet_Changed");
 	
 	HungerTimer.connect("timeout", self, "_on_HungetTimer_timeout")
 	
@@ -92,8 +92,9 @@ func pickup_weapon(var w):
 	if(weapon != null && weapon_changed > TEMPO_WEAPON_CHANGE):
 		remove_child(weapon)
 	weapon = w
-	get_parent().remove_child(weapon)
+	weapon.get_parent().remove_child(weapon)
 	weapon.position = Vector2(0, 0)
+	emit_signal("bullets_changed",  weapon.nb_bullets_magazine, weapon.bullets_total)
 	add_child(weapon)
 
 func reload():

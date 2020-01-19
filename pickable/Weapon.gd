@@ -28,7 +28,7 @@ func fire(rotation):
 		bullet.damage = damage
 		bullet.global_position = global_position
 		bullet.global_rotation = rotation
-		get_parent().get_parent().add_child(bullet)
+		get_tree().get_root().add_child(bullet)
 		reloading = 0
 		nb_bullets_magazine = nb_bullets_magazine - 1
 	

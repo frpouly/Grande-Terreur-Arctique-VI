@@ -1,6 +1,6 @@
 extends "res://spawner/Spawner.gd"
 
-const POLICE = preload("res://enemies/Police1.gd") 
+const POLICE = preload("res://enemies/Police1.tscn") 
 
 
 # Called when the node enters the scene tree for the first time.

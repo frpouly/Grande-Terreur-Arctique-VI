@@ -1,5 +1,6 @@
 extends Node2D
 
+onready var popup = get_node("Spawns/PolicierSpawn")
 const FISH = preload("res://pickable/Pickable.tscn")
 
 func _ready():
@@ -8,8 +9,9 @@ func _ready():
 		if n is Bin:
 			n.connect("trasher", self, "_on_bin_trasher")
 
-
-
+func _process(delta):
+	pass
+	#popup.spawn()
 
 	
 func _on_bin_trasher(g_pos : Vector2):
