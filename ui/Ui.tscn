@@ -31,7 +31,7 @@ margin_left = -283.266
 margin_top = 1.29234
 margin_right = 281.734
 margin_bottom = 87.2923
-max_value = 5.0
+max_value = 50.0
 value = 5.0
 
 [node name="PopupPanel" type="PopupPanel" parent="."]

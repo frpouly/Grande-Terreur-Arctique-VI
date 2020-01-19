@@ -9,7 +9,7 @@ export var MOVE_SPEED = 100
 
 var weapon = null
 var health = 500
-var hunger = 5000
+var hunger = 50
 var usable = null
 
 var TEMPO_WEAPON_CHANGE = 2.0

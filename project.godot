@@ -10,11 +10,6 @@ config_version=4
 
 _global_script_classes=[ {
 "base": "Area2D",
-"class": "Bin",
-"language": "GDScript",
-"path": "res://bin/Bin.gd"
-}, {
-"base": "Area2D",
 "class": "Pickable",
 "language": "GDScript",
 "path": "res://pickable/Pickable.gd"
@@ -25,7 +20,6 @@ _global_script_classes=[ {
 "path": "res://player/Player.gd"
 } ]
 _global_script_class_icons={
-"Bin": "",
 "Pickable": "",
 "Player": ""
 }

@@ -4,8 +4,9 @@ const FISH = preload("res://pickable/Pickable.tscn")
 
 func _ready():
 	for n in $pickups.get_children():
-		if n is Bin:
-			n.connect("trasher", self, "_on_bin_trasher")
+		pass
+		#if n is Bin:
+		#	n.connect("trasher", self, "_on_bin_trasher")
 
 
 
