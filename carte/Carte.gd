@@ -8,8 +8,7 @@ onready var Nav2d : Navigation2D = get_node("Navigation2D")
 
 func _ready():
 	for n in $pickups.get_children():
-		pass
-		if n is Bin:
+		if (n.name == "Bin"):
 			n.connect("trasher", self, "_on_bin_trasher")
 	
 	for s in Spawners.get_children():
@@ -19,8 +18,11 @@ func _ready():
 		e.path = Nav2d.get_simple_path(e.position, $Player.position)
 
 func _process(delta):
-	pass
-	#popup.spawn()
+	for s in Spawners.get_children():
+		s.spawn(Enemies)
+	for e in Enemies.get_children():
+		if(e.path.size()==0):
+			e.path = Nav2d.get_simple_path(e.position, $Player.position)
 
 	
 func _on_bin_trasher(g_pos : Vector2):

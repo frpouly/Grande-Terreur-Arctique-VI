@@ -23,7 +23,7 @@ func _ready():
 	connect("hunger", get_node("CanvasLayer/Ui"), "_on_Player_hunger")
 	connect("bullets_changed", get_node("CanvasLayer/Ui"), "_on_Bullet_Changed");
 	
-	HungerTimer.connect("timeout", self, "_on_HungetTimer_timeout")
+	HungerTimer.connect("timeout", self, "_on_HungerTimer_timeout")
 	
 	emit_signal("hit",health)
 	emit_signal("hunger", hunger)
@@ -76,6 +76,7 @@ func kill():
 	
 func hitted(var damage):
 	health -= damage
+	emit_signal("hit", health)
 	if(health <=0):
 		kill()
 
@@ -131,7 +132,7 @@ func _on_Bin_body_exited(body):
 func _on_Police1_eaten():
 	pass # Replace with function body.
 
-func _on_HungetTimer_timeout():
+func _on_HungerTimer_timeout():
 	hunger -= 1
 	emit_signal("hunger", hunger)
 	

@@ -2,7 +2,8 @@ extends "res://spawner/Spawner.gd"
 
 const POLICE = preload("res://enemies/Police1.tscn") 
 
-
-# Called when the node enters the scene tree for the first time.
 func _ready():
+	instance_of = POLICE
+	
+func _process(delta):
 	instance_of = POLICE

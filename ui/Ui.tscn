@@ -15,6 +15,7 @@ margin_left = -1.22778
 margin_top = -1.22772
 margin_right = 2758.77
 margin_bottom = 1059.77
+max_value = 500.0
 value = 0.0
 
 [node name="HeatLevel" parent="." instance=ExtResource( 3 )]

@@ -9,6 +9,7 @@ onready var Bullets = get_node("Bullets")
 onready var timer = $PopupPanel/Timer
 
 func _on_Player_hit(health):
+	print("aie")
 	LifeBar.value=health
 
 func _on_Zombie_eaten():

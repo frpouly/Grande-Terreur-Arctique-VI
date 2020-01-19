@@ -4,37 +4,37 @@ var pv = 300
 
 signal eaten
 
-const WEAPON = preload("res://pickable/Weapon.tscn")
+
 const MOVE_SPEED = 10
 
-var weapon
 var path : PoolVector2Array
 
 var player = null
 
 func _ready():
 	add_to_group("zombies")
-	weapon = WEAPON.instance()
 	#add_child(weapon)
 
-func _process(delta):
-	fire()
 
 func _physics_process(delta):
 	if path.size() > 0:
-		print(path)
-		var move_vec = path[0] - position
-		var velocity = move_vec.normalized() * MOVE_SPEED
+		#print(path)
+		var look_vec = player.position - global_position
+		if(sqrt(look_vec.x*look_vec.x + look_vec.y*look_vec.y)<150):
+			path.remove(0)
+		else:	
+			var move_vec = path[0] - position
+			var velocity = move_vec.normalized() * MOVE_SPEED
 		
 #		printt(position.distance_to(path[0]), position.distance_to(path[0]) < 10)
-		var collision = move_and_collide(velocity * delta)
-		if collision:
-			velocity = velocity.slide(collision.normal)
+			var collision = move_and_collide(velocity * delta)
+			if collision:
+				velocity = velocity.slide(collision.normal)
 	
 		# using move_and_slide
-		velocity = move_and_slide(velocity)
+			velocity = move_and_slide(velocity)
 	
-		if position.distance_to(path[0]) < 1:
+		if (path.size() > 0 && position.distance_to(path[0]) < 1):
 			print("remove")
 			path.remove(0)
 
@@ -46,18 +46,17 @@ func _physics_process(delta):
 #	vec_to_player = vec_to_player.normalized()
 #	var rotation = atan2(vec_to_player.y, vec_to_player.x)
 #	move_and_collide(vec_to_player * MOVE_SPEED * delta)
-#
-#	print(rotation)
-#	if (rotation < 3*PI/4 && rotation > -3*PI/4):
-#		if (rotation > PI/4):
-#			$AnimatedSprite.play("down")
-#		elif (rotation < -PI/4):
-#				$AnimatedSprite.play("up")
-#		else:
-#				$AnimatedSprite.play("right")
-#
-#	else:
-#		$AnimatedSprite.play("left")
+
+	if (rotation < 3*PI/4 && rotation > -3*PI/4):
+		if (rotation > PI/4):
+			$AnimatedSprite.play("down")
+		elif (rotation < -PI/4):
+				$AnimatedSprite.play("up")
+		else:
+				$AnimatedSprite.play("right")
+
+	else:
+		$AnimatedSprite.play("left")
 ##	if(0.75<rotation && rotation>=-0.75):
 ##		$AnimatedSprite.play("left")
 ##	elif(-0.75<rotation && rotation>=-2.25):
@@ -76,11 +75,6 @@ func hitted(var damage):
 	pv -= damage
 	if(pv <=0):
 		queue_free()
-	
-    
-
-func fire():
-	weapon.fire(global_rotation)
 
 func set_player(p):
 	player = p

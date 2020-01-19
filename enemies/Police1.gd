@@ -1,13 +1,19 @@
 extends "res://enemies/Habitants.gd"
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+const WEAPON = preload("res://pickable/Gun.tscn")
+var weapon
 
-# Called when the node enters the scene tree for the first time.
+
 func _ready():
+	player = get_node("../../Player")
 	pv = 150
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+	weapon = WEAPON.instance()
+	add_child(weapon)
+	weapon.scale=(Vector2(0.5,0.5))
+	
+func _process(delta):
+	var look_vec = player.position - global_position
+	fire(look_vec)
+	
+func fire(look_vec):
+	weapon.fire(atan2(look_vec.y,look_vec.x))
