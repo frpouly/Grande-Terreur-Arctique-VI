@@ -13,7 +13,9 @@ func _ready():
 	
 func _process(delta):
 	var look_vec = player.position - global_position
-	fire(look_vec)
+	if player.get_global_position().distance_to(global_position) < 300:
+		fire(look_vec)
 	
 func fire(look_vec):
-	weapon.fire(atan2(look_vec.y,look_vec.x))
+	if ! weapon.fire(atan2(look_vec.y,look_vec.x)):
+		weapon.reload()

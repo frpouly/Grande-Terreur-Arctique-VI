@@ -65,8 +65,9 @@ func _physics_process(delta):
 		use()
 	
 	if Input.is_action_just_pressed("reload"):
-		reload()
-		emit_signal("bullets_changed", weapon.nb_bullets_magazine, weapon.bullets_total)
+		if weapon != null:
+			reload()
+			emit_signal("bullets_changed", weapon.nb_bullets_magazine, weapon.bullets_total)
 		
 	if(weapon_changed < TEMPO_WEAPON_CHANGE):
 		weapon_changed += delta

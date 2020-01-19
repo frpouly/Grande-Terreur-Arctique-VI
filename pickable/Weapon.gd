@@ -31,6 +31,8 @@ func fire(rotation):
 		get_tree().get_root().add_child(bullet)
 		reloading = 0
 		nb_bullets_magazine = nb_bullets_magazine - 1
+		return true
+	return false
 
 
 var missing_bullets	
