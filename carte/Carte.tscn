@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://carte/Carte.gd" type="Script" id=1]
 [ext_resource path="res://assets/new_tileset.tres" type="TileSet" id=2]
 [ext_resource path="res://player/Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://bin/Bin.tscn" type="PackedScene" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 559.532, 22.3152 )
@@ -98,3 +99,7 @@ scale = Vector2( 0.5, 0.5 )
 collision_mask = 22
 
 [node name="pickups" type="Node2D" parent="."]
+
+[node name="Bin" parent="pickups" instance=ExtResource( 4 )]
+position = Vector2( 767.654, 525.036 )
+scale = Vector2( 0.5, 0.5 )
