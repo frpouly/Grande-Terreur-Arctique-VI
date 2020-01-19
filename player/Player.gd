@@ -109,3 +109,7 @@ func _on_Bin_body_entered(body):
 func _on_Bin_body_exited(body):
 	if(body.has_method("use")):
     	    body.usable=null
+
+
+func _on_Police1_eaten():
+	pass # Replace with function body.

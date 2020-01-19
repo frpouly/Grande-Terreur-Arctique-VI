@@ -1,22 +1,44 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://enemies/Habitants.gd" type="Script" id=1]
 [ext_resource path="res://assets/zombie.png" type="Texture" id=2]
+[ext_resource path="res://assets/les boys/barbeblue/left/II.png" type="Texture" id=3]
+[ext_resource path="res://assets/les boys/barbeblue/left/IL.png" type="Texture" id=4]
+[ext_resource path="res://assets/les boys/barbeblue/left/JI.png" type="Texture" id=5]
+[ext_resource path="res://assets/les boys/barbeblue/right/II.png" type="Texture" id=6]
+[ext_resource path="res://assets/les boys/barbeblue/right/IL.png" type="Texture" id=7]
+[ext_resource path="res://assets/les boys/barbeblue/right/JI.png" type="Texture" id=8]
+[ext_resource path="res://assets/les boys/barbeblue/back/II.png" type="Texture" id=9]
+[ext_resource path="res://assets/les boys/barbeblue/back/IL.png" type="Texture" id=10]
+[ext_resource path="res://assets/les boys/barbeblue/back/JI.png" type="Texture" id=11]
+[ext_resource path="res://assets/les boys/barbeblue/face/II.png" type="Texture" id=12]
+[ext_resource path="res://assets/les boys/barbeblue/face/IL.png" type="Texture" id=13]
+[ext_resource path="res://assets/les boys/barbeblue/face/JI.png" type="Texture" id=14]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 30.0
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
-"frames": [  ],
+"frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 3 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "left",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ), ExtResource( 7 ), ExtResource( 6 ), ExtResource( 8 ) ],
 "loop": true,
 "name": "right",
 "speed": 5.0
 }, {
-"frames": [  ],
+"frames": [ ExtResource( 9 ), ExtResource( 10 ), ExtResource( 9 ), ExtResource( 11 ) ],
 "loop": true,
-"name": "lrft",
-"speed": 1.0
+"name": "up",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 12 ), ExtResource( 13 ), ExtResource( 12 ), ExtResource( 14 ) ],
+"loop": true,
+"name": "down",
+"speed": 5.0
 } ]
 
 [node name="Habitants" type="KinematicBody2D"]
@@ -36,4 +58,4 @@ cast_to = Vector2( 50, 0 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 2 )
-animation = "right"
+animation = "down"
