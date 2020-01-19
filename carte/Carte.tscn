@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://carte/Carte.gd" type="Script" id=1]
 [ext_resource path="res://assets/new_tileset.tres" type="TileSet" id=2]
@@ -8,6 +8,17 @@
 [ext_resource path="res://spawner/PolicierSpawner.tscn" type="PackedScene" id=6]
 [ext_resource path="res://spawner/PolicierSpawner1.gd" type="Script" id=7]
 [ext_resource path="res://spawner/PolicierSpawner2.gd" type="Script" id=8]
+[ext_resource path="res://spawner/CivilianSpawner2.tscn" type="PackedScene" id=9]
+[ext_resource path="res://spawner/CivilianSpawner3.tscn" type="PackedScene" id=10]
+[ext_resource path="res://spawner/CivilianSpawner3.gd" type="Script" id=11]
+[ext_resource path="res://spawner/CivilianSpawner4.tscn" type="PackedScene" id=12]
+[ext_resource path="res://spawner/CivilianSpawner4.gd" type="Script" id=13]
+[ext_resource path="res://spawner/CivilianSpawner5.tscn" type="PackedScene" id=14]
+[ext_resource path="res://spawner/CivilianSpawner5.gd" type="Script" id=15]
+[ext_resource path="res://spawner/CivilianSpawner6.tscn" type="PackedScene" id=16]
+[ext_resource path="res://spawner/CivilianSpawner6.gd" type="Script" id=17]
+[ext_resource path="res://spawner/CivilianSpawner.tscn" type="PackedScene" id=18]
+[ext_resource path="res://spawner/CivilianSpawner7.gd" type="Script" id=19]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 559.532, 22.3152 )
@@ -159,6 +170,29 @@ script = ExtResource( 8 )
 
 [node name="PolicierSpawner2" parent="Spawns" instance=ExtResource( 6 )]
 position = Vector2( 600, 700 )
+
+[node name="CivilianSpawner" parent="Spawns" instance=ExtResource( 9 )]
+position = Vector2( 250, 300 )
+
+[node name="CivilianSpawner2" parent="Spawns" instance=ExtResource( 10 )]
+position = Vector2( 500, 600 )
+script = ExtResource( 11 )
+
+[node name="CivilianSpawner3" parent="Spawns" instance=ExtResource( 12 )]
+position = Vector2( 900, 300 )
+script = ExtResource( 13 )
+
+[node name="CivilianSpawner4" parent="Spawns" instance=ExtResource( 14 )]
+position = Vector2( 1100, 800 )
+script = ExtResource( 15 )
+
+[node name="CivilianSpawner5" parent="Spawns" instance=ExtResource( 16 )]
+position = Vector2( 900, 750 )
+script = ExtResource( 17 )
+
+[node name="CivilianSpawner6" parent="Spawns" instance=ExtResource( 18 )]
+position = Vector2( 400, 1000 )
+script = ExtResource( 19 )
 
 [node name="Enemies" type="Node2D" parent="."]
 [connection signal="body_entered" from="pickups/Uzi" to="pickups/Uzi" method="_on_Area2D_body_entered"]
