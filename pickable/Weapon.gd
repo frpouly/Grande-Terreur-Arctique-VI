@@ -11,16 +11,21 @@ var reloading = 0
 var magazine_capacity = 12
 var nb_bullets_magazine = 12
 var bullets_total = 120
+var used = false
+
+var damage = 10
 
 
 func _on_Area2D_body_entered(body):
 	if(body.has_method("pickup_weapon")):
 		body.pickup_weapon(self)
+		used = true
 		
 		
 func fire(rotation):
 	if(reloading >= reload_time and nb_bullets_magazine > 0):
-		var bullet = BULLET.instance()
+		var bullet = BULLET.instance(damage)
+		bullet.damage = damage
 		bullet.global_position = global_position
 		bullet.global_rotation = rotation
 		get_parent().get_parent().add_child(bullet)
@@ -40,3 +45,6 @@ func reload():
 
 func _process(delta):
 	reloading += delta
+	if(used):
+		var m = get_global_mouse_position()
+		rotation += get_angle_to(m)

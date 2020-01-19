@@ -3,6 +3,8 @@ extends Area2D
 var speed = 10
 var deadly = 0.0
 
+var damage
+
 func _process(delta):
     move(delta)
     deadly+=delta
