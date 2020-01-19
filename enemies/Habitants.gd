@@ -19,6 +19,7 @@ func _ready():
 func _physics_process(delta):
 	if path.size() > 0:
 		#print(path)
+		player = get_node("../../Player")
 		var look_vec = player.position - global_position
 		if(sqrt(look_vec.x*look_vec.x + look_vec.y*look_vec.y)<150):
 			path.remove(0)
