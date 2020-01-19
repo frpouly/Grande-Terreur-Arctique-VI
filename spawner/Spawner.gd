@@ -6,8 +6,8 @@ var instance_of
 func _ready():
 	pass # Replace with function body.
 
-func spawn():
+func spawn(container):
 	var body = instance_of.instance()
-	get_tree().get_root().add_child(body)
+	container.add_child(body)
 	body.global_position = global_position
 	return body
