@@ -16,9 +16,22 @@ var TEMPO_WEAPON_CHANGE = 2.0
 var weapon_changed = 0.0
 
 func _ready():
+	connect("eaten", get_node("CanvasLayer/Ui"), "_on_Player_eaten")
+	connect("hit", get_node("CanvasLayer/Ui"), "_on_Player_hit")
+	connect("hunger", get_node("CanvasLayer/Ui"), "_on_Player_hunger")
+	
+	emit_signal("hit",health)
+	emit_signal("hunger", hunger)
+	
 	yield(get_tree(), "idle_frame")
 	get_tree().call_group("zombies", "set_player", self)
+
+func _process(delta):
+	hunger -= 0.01
+	emit_signal("hunger", hunger)
 	
+	if hunger <= 0:
+		kill()
 
 func _physics_process(delta):
 	var move_vec = Vector2()
@@ -44,14 +57,7 @@ func _physics_process(delta):
 	# using move_and_slide
 	velocity = move_and_slide(velocity)
 	
-	
-	
-	hunger-=1
-	if(hunger%50==0):
-		emit_signal("hunger")
-		if(hunger==0):
-			kill()
-	
+
 	if Input.is_action_pressed("shoot"):
 		fire()
 		
@@ -65,10 +71,7 @@ func _physics_process(delta):
 		weapon_changed += delta
 
 func kill():
-	health-=10;
-	emit_signal("hit",health)
-	if(health<=0 || hunger<=0):
-		get_tree().reload_current_scene()
+	get_tree().reload_current_scene()
 	
 
 func pickup():
