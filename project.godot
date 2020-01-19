@@ -10,6 +10,11 @@ config_version=4
 
 _global_script_classes=[ {
 "base": "Area2D",
+"class": "Bin",
+"language": "GDScript",
+"path": "res://bin/Bin.gd"
+}, {
+"base": "Area2D",
 "class": "Pickable",
 "language": "GDScript",
 "path": "res://pickable/Pickable.gd"
@@ -20,6 +25,7 @@ _global_script_classes=[ {
 "path": "res://player/Player.gd"
 } ]
 _global_script_class_icons={
+"Bin": "",
 "Pickable": "",
 "Player": ""
 }
@@ -29,6 +35,13 @@ _global_script_class_icons={
 config/name="Gamejam"
 run/main_scene="res://carte/Carte.tscn"
 config/icon="res://icon.png"
+
+[debug]
+
+gdscript/warnings/unused_variable=false
+gdscript/warnings/unused_class_variable=false
+gdscript/warnings/unused_argument=false
+gdscript/warnings/return_value_discarded=false
 
 [importer_defaults]
 
