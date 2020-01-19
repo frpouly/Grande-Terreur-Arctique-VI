@@ -82,7 +82,7 @@ cast_to = Vector2( 2000, 0 )
 scale = Vector2( 1.01334, 1 )
 frames = SubResource( 2 )
 animation = "right"
-frame = 2
+frame = 5
 playing = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -96,4 +96,3 @@ limit_bottom = 1250
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Ui" parent="CanvasLayer" instance=ExtResource( 35 )]
-visible = false

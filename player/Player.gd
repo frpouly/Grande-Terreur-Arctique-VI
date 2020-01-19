@@ -98,6 +98,7 @@ func fire():
 func use():
 	if(usable != null):
 		usable.empty()
+		usable = null
 
     #var coll = bullet.get_collider()
     #if (coll.has_method("kill") and bullet.is_colliding()):
