@@ -17,7 +17,6 @@ func _on_Zombie_eaten():
 
 func _on_Player_hunger(hunger):
 	Hunger.value = hunger
-	print(hunger)
 
 
 func _on_Player_eaten():
