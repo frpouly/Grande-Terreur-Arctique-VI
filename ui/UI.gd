@@ -9,12 +9,12 @@ onready var Bullets = get_node("Bullets")
 onready var timer = $PopupPanel/Timer
 
 func _on_Player_hit(health):
-	print("aie")
 	LifeBar.value=health
 
-func _on_Zombie_eaten():
-	$TextureProgress3.value+=1
-	if($TextureProgress3.value==3):
+func _process(delta):
+	print($HeatLevel.value)
+	$HeatLevel.value+=1
+	if($HeatLevel.value==3000):
 		_on_Wanted()
 
 func _on_Player_hunger(hunger):
@@ -32,10 +32,7 @@ func _ready():
 	
 
 func _on_Bin_trasher():
-	var text = $PopupPanel/Label
-	text.text = "Achievement Get ! \n Bin Trasher \n Vous avez détruit une poubelle, jeune délinquant!"
-	popup.popup()
-	timer.start()
+	pass
 	
 func _on_Wanted():
 	var text = $PopupPanel/Label
@@ -54,3 +51,9 @@ func _on_Timer_timeout():
 
 func _on_Bullet_Changed(magazine, total):
 	Bullets.text = str(magazine) + "/" + str(total)
+
+func _on_Player_bin_trasher():
+	var text = $PopupPanel/Label
+	text.text = "Achievement Get ! \n Bin Trasher \n Vous avez détruit une poubelle, jeune délinquant!"
+	popup.popup()
+	timer.start()

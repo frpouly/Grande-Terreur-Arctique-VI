@@ -1,10 +1,10 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=35 format=2]
 
 [ext_resource path="res://carte/Carte.gd" type="Script" id=1]
 [ext_resource path="res://assets/new_tileset.tres" type="TileSet" id=2]
 [ext_resource path="res://player/Player.tscn" type="PackedScene" id=3]
-[ext_resource path="res://bin/Bin.tscn" type="PackedScene" id=4]
-[ext_resource path="res://pickable/Uzi.tscn" type="PackedScene" id=5]
+[ext_resource path="res://pickable/Uzi.tscn" type="PackedScene" id=4]
+[ext_resource path="res://bin/Bin.tscn" type="PackedScene" id=5]
 [ext_resource path="res://spawner/PolicierSpawner.tscn" type="PackedScene" id=6]
 [ext_resource path="res://spawner/PolicierSpawner1.gd" type="Script" id=7]
 [ext_resource path="res://spawner/PolicierSpawner2.gd" type="Script" id=8]
@@ -19,6 +19,17 @@
 [ext_resource path="res://spawner/CivilianSpawner6.gd" type="Script" id=17]
 [ext_resource path="res://spawner/CivilianSpawner.tscn" type="PackedScene" id=18]
 [ext_resource path="res://spawner/CivilianSpawner7.gd" type="Script" id=19]
+[ext_resource path="res://spawner/ChasseurSpawner2.tscn" type="PackedScene" id=20]
+[ext_resource path="res://spawner/ChasseurSpawner2.gd" type="Script" id=21]
+[ext_resource path="res://spawner/ChasseurSpawner.tscn" type="PackedScene" id=22]
+[ext_resource path="res://spawner/Army.tscn" type="PackedScene" id=23]
+[ext_resource path="res://spawner/ArmySpawner.gd" type="Script" id=24]
+[ext_resource path="res://spawner/ArmySpawner2.tscn" type="PackedScene" id=25]
+[ext_resource path="res://spawner/ArmySpawner2.gd" type="Script" id=26]
+[ext_resource path="res://spawner/ArmySpawner3.tscn" type="PackedScene" id=27]
+[ext_resource path="res://spawner/ArmySpawner3.gd" type="Script" id=28]
+[ext_resource path="res://assets/PNG/nordvpn-square-300x254.png" type="Texture" id=29]
+[ext_resource path="res://assets/PNG/index.jpg" type="Texture" id=30]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 559.532, 22.3152 )
@@ -108,55 +119,56 @@ format = 1
 tile_data = PoolIntArray( 1441856, 19, 1, 1572920, 17, 3, 1572921, 17, 4, 1572922, 17, 5, 1572930, 29, 7, 1638448, 17, 196608, 1638449, 17, 196609, 1638450, 17, 196610, 1703998, 22, 131078, 1703999, 22, 131079, 1769516, 17, 131075, 1769517, 17, 131076, 1769518, 17, 131077, 1769524, 17, 0, 1769525, 17, 1, 1769526, 17, 2, 1835053, 25, 4, 1835057, 25, 4, 1835061, 25, 4, 1835065, 25, 4, 1900604, 29, 1, 1966121, 18, 5, 2162756, 29, 65539, 2359337, 29, 65539, 2621487, 24, 131074, 2687014, 25, 0, 2687025, 25, 0, 2752559, 29, 0, 2818091, 19, 65539, 2883631, 18, 6, 2949168, 22, 65539, 2949169, 22, 65540, 3276824, 17, 327684, 3276825, 17, 327684, 3276836, 22, 6, 3342360, 17, 262148, 3342361, 17, 262149, 3342372, 22, 65543, 3342390, 29, 131077, 3342391, 29, 131078, 3407893, 24, 3, 3407900, 24, 3, 3407925, 26, 0, 3407928, 26, 196613, 3407934, 26, 196611, 3473429, 24, 131075, 3473436, 24, 131075, 3473461, 26, 65536, 3473471, 21, 2, 3473472, 21, 3, 3473473, 21, 4, 3538981, 22, 131074, 3539005, 26, 2, 3539007, 21, 65538, 3539008, 21, 65539, 3539009, 21, 65540, 3604504, 25, 4, 3604505, 25, 4, 3604517, 22, 196610, 3604520, 29, 7, 3604521, 19, 2, 3604534, 21, 2, 3604535, 21, 3, 3604536, 21, 4, 3604541, 26, 65541, 3604543, 21, 131074, 3604544, 21, 131075, 3604545, 21, 131076, 3670070, 21, 131074, 3670071, 21, 131075, 3670072, 21, 131076, 3735573, 25, 65536, 3735580, 25, 65536, 3801118, 29, 65539 )
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
-position = Vector2( 628.166, 518.317 )
+position = Vector2( 629.166, 518.317 )
 scale = Vector2( 0.5, 0.5 )
 collision_mask = 22
 
 [node name="pickups" type="Node2D" parent="."]
-editor/display_folded = true
 
-[node name="Bin" parent="pickups" instance=ExtResource( 4 )]
-position = Vector2( 685.147, 465.923 )
+[node name="Uzi" parent="pickups" instance=ExtResource( 4 )]
+position = Vector2( 219.347, 222.957 )
+
+[node name="Bin" type="Node2D" parent="pickups"]
+
+[node name="Bin" parent="pickups/Bin" instance=ExtResource( 5 )]
+position = Vector2( 668.936, 465.383 )
 scale = Vector2( 0.5, 0.5 )
 
-[node name="Bin2" parent="pickups" instance=ExtResource( 4 )]
-position = Vector2( 958.932, 472.062 )
+[node name="Bin2" parent="pickups/Bin" instance=ExtResource( 5 )]
+position = Vector2( 975.143, 523.937 )
 scale = Vector2( 0.5, 0.5 )
 
-[node name="Bin3" parent="pickups" instance=ExtResource( 4 )]
-position = Vector2( 681.464, 318.595 )
+[node name="Bin3" parent="pickups/Bin" instance=ExtResource( 5 )]
+position = Vector2( 673.359, 306.707 )
 scale = Vector2( 0.5, 0.5 )
 
-[node name="Bin4" parent="pickups" instance=ExtResource( 4 )]
-position = Vector2( 958.932, 323.506 )
+[node name="Bin4" parent="pickups/Bin" instance=ExtResource( 5 )]
+position = Vector2( 971.762, 320.865 )
 scale = Vector2( 0.5, 0.5 )
 
-[node name="Bin5" parent="pickups" instance=ExtResource( 4 )]
+[node name="Bin5" parent="pickups/Bin" instance=ExtResource( 5 )]
 position = Vector2( 768.981, 677.579 )
 scale = Vector2( 0.5, 0.5 )
 
-[node name="Bin6" parent="pickups" instance=ExtResource( 4 )]
+[node name="Bin6" parent="pickups/Bin" instance=ExtResource( 5 )]
 position = Vector2( 346.293, 627.984 )
 scale = Vector2( 0.5, 0.5 )
 
-[node name="Bin7" parent="pickups" instance=ExtResource( 4 )]
+[node name="Bin7" parent="pickups/Bin" instance=ExtResource( 5 )]
 position = Vector2( 701.108, 796.183 )
 scale = Vector2( 0.5, 0.5 )
 
-[node name="Bin8" parent="pickups" instance=ExtResource( 4 )]
+[node name="Bin8" parent="pickups/Bin" instance=ExtResource( 5 )]
 position = Vector2( 471.522, 737.252 )
 scale = Vector2( 0.5, 0.5 )
 
-[node name="Bin9" parent="pickups" instance=ExtResource( 4 )]
+[node name="Bin9" parent="pickups/Bin" instance=ExtResource( 5 )]
 position = Vector2( 1066.97, 787.589 )
 scale = Vector2( 0.5, 0.5 )
 
-[node name="Bin10" parent="pickups" instance=ExtResource( 4 )]
+[node name="Bin10" parent="pickups/Bin" instance=ExtResource( 5 )]
 position = Vector2( 924.555, 786.361 )
 scale = Vector2( 0.5, 0.5 )
-
-[node name="Uzi" parent="pickups" instance=ExtResource( 5 )]
-position = Vector2( 219.347, 222.957 )
 
 [node name="Spawns" type="Node" parent="."]
 
@@ -194,5 +206,34 @@ script = ExtResource( 17 )
 position = Vector2( 400, 1000 )
 script = ExtResource( 19 )
 
+[node name="ChasseurSpawner" parent="Spawns" instance=ExtResource( 20 )]
+position = Vector2( 400, 300 )
+script = ExtResource( 21 )
+
+[node name="ChasseurSpawner2" parent="Spawns" instance=ExtResource( 22 )]
+position = Vector2( 400, 200 )
+script = ExtResource( 21 )
+
+[node name="ArmySpawner1" parent="Spawns" instance=ExtResource( 23 )]
+position = Vector2( 900, 700 )
+script = ExtResource( 24 )
+
+[node name="ArmySpawner2" parent="Spawns" instance=ExtResource( 25 )]
+position = Vector2( 700, 950 )
+script = ExtResource( 26 )
+
+[node name="ArmySpawner3" parent="Spawns" instance=ExtResource( 27 )]
+position = Vector2( 1000, 790 )
+script = ExtResource( 28 )
+
 [node name="Enemies" type="Node2D" parent="."]
+
+[node name="nordvpn-square-300x254" type="Sprite" parent="."]
+position = Vector2( 855.801, 403.496 )
+scale = Vector2( 0.211817, 0.22186 )
+texture = ExtResource( 29 )
+
+[node name="index" type="Sprite" parent="nordvpn-square-300x254"]
+position = Vector2( -299.436, 87.0018 )
+texture = ExtResource( 30 )
 [connection signal="body_entered" from="pickups/Uzi" to="pickups/Uzi" method="_on_Area2D_body_entered"]

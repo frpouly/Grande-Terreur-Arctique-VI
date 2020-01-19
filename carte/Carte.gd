@@ -5,12 +5,9 @@ const FISH = preload("res://pickable/Pickable.tscn")
 onready var Spawners = get_node("Spawns")
 onready var Enemies = get_node("Enemies")
 onready var Nav2d : Navigation2D = get_node("Navigation2D")
+onready var Bin = get_node("pickups/Bin")
 
 func _ready():
-	for n in $pickups.get_children():
-		if (n.name == "Bin"):
-			n.connect("trasher", self, "_on_bin_trasher")
-	
 	for s in Spawners.get_children():
 		s.spawn(Enemies)
 	

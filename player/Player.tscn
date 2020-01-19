@@ -83,7 +83,7 @@ cast_to = Vector2( 2000, 0 )
 scale = Vector2( 1.01334, 1 )
 frames = SubResource( 2 )
 animation = "right"
-frame = 4
+frame = 3
 playing = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -102,3 +102,4 @@ margin_bottom = -0.950012
 
 [node name="HungerTimer" type="Timer" parent="."]
 autostart = true
+[connection signal="bin_trasher" from="." to="." method="_on_Player_bin_trasher"]

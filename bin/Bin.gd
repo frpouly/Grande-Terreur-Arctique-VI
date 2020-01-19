@@ -2,13 +2,8 @@ extends Area2D
 class_name Bin
 
 
-
-signal trasher
-
-
 func empty():
-	emit_signal("trasher", global_position)
-#	fish.global_position = global_position;
+#fish.global_position = global_position;
 #	position += Vector2(0, 30)
 #	get_parent().add_child(fish)
 	queue_free()

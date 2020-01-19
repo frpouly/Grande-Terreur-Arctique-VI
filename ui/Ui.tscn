@@ -24,6 +24,7 @@ margin_top = 49.2876
 margin_right = 2767.54
 margin_bottom = 1110.29
 rect_scale = Vector2( 0.05, 0.05 )
+max_value = 3000.0
 
 [node name="Hunger" parent="." instance=ExtResource( 4 )]
 anchor_left = 1.0

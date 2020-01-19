@@ -46,7 +46,7 @@ func reload():
 			nb_bullets_magazine += bullets_total
 			bullets_total = 0
 	else:
-		print("clic")
+		pass
 		#$clic.play()
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):

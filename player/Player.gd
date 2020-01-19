@@ -4,6 +4,7 @@ class_name Player
 signal hit
 signal hunger
 signal bullets_changed
+signal bin_trasher
 
 export var MOVE_SPEED = 100
 export var max_hunger = 50
@@ -21,6 +22,7 @@ onready var HungerTimer : Timer = get_node("HungerTimer")
 func _ready():
 	connect("hit", get_node("CanvasLayer/Ui"), "_on_Player_hit")
 	connect("hunger", get_node("CanvasLayer/Ui"), "_on_Player_hunger")
+	connect("bin_trasher", get_node("CanvasLayer/Ui"),"_on_Player_bin_trasher")
 	connect("bullets_changed", get_node("CanvasLayer/Ui"), "_on_Bullet_Changed");
 	
 	HungerTimer.connect("timeout", self, "_on_HungerTimer_timeout")
@@ -140,3 +142,6 @@ func _on_HungerTimer_timeout():
 	if hunger <= 0:
 		kill()
 	
+func _on_Player_bin_trasher():
+	print("trashed")
+	emit_signal("bin_trasher")
