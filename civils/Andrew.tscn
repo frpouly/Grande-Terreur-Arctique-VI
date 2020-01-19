@@ -1,0 +1,48 @@
+[gd_scene load_steps=19 format=2]
+
+[ext_resource path="res://enemies/Habitants.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/les boys/andrew/right/tile_0105.png" type="Texture" id=2]
+[ext_resource path="res://assets/les boys/andrew/right/tile_0107.png" type="Texture" id=3]
+[ext_resource path="res://assets/les boys/andrew/right/tile_0134.png" type="Texture" id=4]
+[ext_resource path="res://assets/les boys/andrew/right/tile_0161.png" type="Texture" id=5]
+[ext_resource path="res://assets/les boys/andrew/left/tile_0104.png" type="Texture" id=6]
+[ext_resource path="res://assets/les boys/andrew/left/tile_0105.png" type="Texture" id=7]
+[ext_resource path="res://assets/les boys/andrew/left/tile_0131.png" type="Texture" id=8]
+[ext_resource path="res://assets/les boys/andrew/left/tile_0158.png" type="Texture" id=9]
+[ext_resource path="res://assets/les boys/andrew/back/tile_0106 - Copie.png" type="Texture" id=10]
+[ext_resource path="res://assets/les boys/andrew/back/tile_0106.png" type="Texture" id=11]
+[ext_resource path="res://assets/les boys/andrew/back/tile_0133.png" type="Texture" id=12]
+[ext_resource path="res://assets/les boys/andrew/back/tile_0160.png" type="Texture" id=13]
+[ext_resource path="res://assets/les boys/andrew/face/tile_0105 - Copie.png" type="Texture" id=14]
+[ext_resource path="res://assets/les boys/andrew/face/tile_0105.png" type="Texture" id=15]
+[ext_resource path="res://assets/les boys/andrew/face/tile_0132.png" type="Texture" id=16]
+[ext_resource path="res://assets/les boys/andrew/face/tile_0159.png" type="Texture" id=17]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "right",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ) ],
+"loop": true,
+"name": "left",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ) ],
+"loop": true,
+"name": "up",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ) ],
+"loop": true,
+"name": "down",
+"speed": 5.0
+} ]
+
+[node name="Andrew" index="0" instance=ExtResource( 1 )]
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="." index="3"]
+frames = SubResource( 1 )
+animation = "left"
