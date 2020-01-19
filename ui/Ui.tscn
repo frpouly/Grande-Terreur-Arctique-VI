@@ -42,17 +42,24 @@ margin_bottom = 82.0
 
 [node name="Label" type="Label" parent="PopupPanel"]
 margin_left = 4.0
-margin_top = 27.0
+margin_top = 4.0
 margin_right = 520.0
 margin_bottom = 78.0
 align = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="PopupPanel"]
-margin_left = 64.0
-margin_top = 64.0
-margin_right = 519.0
-margin_bottom = 76.0
+margin_left = 4.0
+margin_top = 4.0
+margin_right = 520.0
+margin_bottom = 78.0
 
 [node name="Timer" type="Timer" parent="PopupPanel"]
 wait_time = 5.0
+
+[node name="Bullets" type="Label" parent="."]
+margin_left = 916.0
+margin_top = 56.0
+margin_right = 1001.0
+margin_bottom = 88.0
+align = 2
 [connection signal="timeout" from="PopupPanel/Timer" to="." method="_on_Timer_timeout"]

@@ -5,6 +5,7 @@ onready var popup = get_node("PopupPanel")
 onready var LifeBar = get_node("Lifebar")
 onready var HeatLevel = get_node("HeatLevel")
 onready var Hunger = get_node("Hunger")
+onready var Bullets = get_node("Bullets")
 onready var timer = $PopupPanel/Timer
 
 func _on_Player_hit(health):
@@ -49,3 +50,6 @@ func _on_hunger():
 
 func _on_Timer_timeout():
 	popup.hide()
+
+func _on_Bullet_Changed(magazine, total):
+	Bullets.text = str(magazine) + "/" + str(total)

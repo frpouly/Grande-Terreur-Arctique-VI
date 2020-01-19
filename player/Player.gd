@@ -3,6 +3,7 @@ class_name Player
 
 signal hit
 signal hunger
+signal bullets_changed
 
 export var MOVE_SPEED = 100
 export var max_hunger = 50
@@ -20,6 +21,7 @@ onready var HungerTimer : Timer = get_node("HungerTimer")
 func _ready():
 	connect("hit", get_node("CanvasLayer/Ui"), "_on_Player_hit")
 	connect("hunger", get_node("CanvasLayer/Ui"), "_on_Player_hunger")
+	connect("bullets_changed", get_node("CanvasLayer/UI"), "_on_Bullet_Changed");
 	
 	HungerTimer.connect("timeout", self, "_on_HungetTimer_timeout")
 	
@@ -64,6 +66,7 @@ func _physics_process(delta):
 	
 	if Input.is_action_just_pressed("reload"):
 		reload()
+		emit_signal("bullets_changed", weapon.nb_bullets_magazine, weapon.bullets_total)
 		
 	if(weapon_changed < TEMPO_WEAPON_CHANGE):
 		weapon_changed += delta
@@ -96,11 +99,13 @@ func pickup_weapon(var w):
 func reload():
 	if(weapon != null):
 		weapon.reload()
+		emit_signal("bullets_changed", weapon.nb_bullets_magazine, weapon.bullets_total)
 
 func fire():
 	if(weapon != null):
 		var look_vec = get_global_mouse_position() - global_position
 		weapon.fire(atan2(look_vec.y, look_vec.x))
+		emit_signal("bullets_changed", weapon.nb_bullets_magazine, weapon.bullets_total)
 		
 func use():
 	if(usable != null):
