@@ -1,5 +1,7 @@
 extends KinematicBody2D
 
+var pv = 100
+
 signal eaten
 
 const WEAPON = preload("res://pickable/Weapon.tscn")
@@ -49,9 +51,10 @@ func _physics_process(delta):
 		#if coll.name == "Player":
 		#	coll.kill()
 
-func eaten():
-	emit_signal("eaten")
-	queue_free()
+func hitted(var damage):
+	pv -= damage
+	if(pv <=0):
+		queue_free()
 	
 func _process(delta):
     fire()

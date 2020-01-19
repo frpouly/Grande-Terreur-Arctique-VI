@@ -1,4 +1,6 @@
-extends "res://enemies/Habitants.gd"
+extends KinematicBody2D
+
+var pv
 
 # Declare member variables here. Examples:
 # var a = 2
@@ -6,7 +8,7 @@ extends "res://enemies/Habitants.gd"
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pv = 150
+	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):

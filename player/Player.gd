@@ -8,7 +8,7 @@ signal eaten
 export var MOVE_SPEED = 100
 
 var weapon = null
-var health = 100
+var health = 500
 var hunger = 5000
 var usable = null
 
@@ -73,6 +73,10 @@ func _physics_process(delta):
 func kill():
 	get_tree().reload_current_scene()
 	
+func hitted(var damage):
+	health -= damage
+	if(health <=0):
+		kill()
 
 func pickup():
 	emit_signal("eaten")
