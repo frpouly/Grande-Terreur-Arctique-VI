@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-var pv = 300
+var pv = 100
 
 signal eaten
 
