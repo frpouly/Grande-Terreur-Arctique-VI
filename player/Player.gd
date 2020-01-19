@@ -3,22 +3,25 @@ class_name Player
 
 signal hit
 signal hunger
-signal eaten
 
 export var MOVE_SPEED = 100
+export var max_hunger = 50
 
 var weapon = null
 var health = 500
-var hunger = 50
+var hunger = max_hunger
 var usable = null
 
 var TEMPO_WEAPON_CHANGE = 2.0
 var weapon_changed = 0.0
 
+onready var HungerTimer : Timer = get_node("HungerTimer")
+
 func _ready():
-	connect("eaten", get_node("CanvasLayer/Ui"), "_on_Player_eaten")
 	connect("hit", get_node("CanvasLayer/Ui"), "_on_Player_hit")
 	connect("hunger", get_node("CanvasLayer/Ui"), "_on_Player_hunger")
+	
+	HungerTimer.connect("timeout", self, "_on_HungetTimer_timeout")
 	
 	emit_signal("hit",health)
 	emit_signal("hunger", hunger)
@@ -26,12 +29,7 @@ func _ready():
 	yield(get_tree(), "idle_frame")
 	get_tree().call_group("zombies", "set_player", self)
 
-func _process(delta):
-	hunger -= 0.01
-	emit_signal("hunger", hunger)
-	
-	if hunger <= 0:
-		kill()
+
 
 func _physics_process(delta):
 	var move_vec = Vector2()
@@ -79,7 +77,12 @@ func hitted(var damage):
 		kill()
 
 func pickup():
-	emit_signal("eaten")
+	hunger += 300
+	if hunger > max_hunger:
+		hunger = max_hunger
+	
+	emit_signal("hunger", hunger)
+		
 	print("Picked Up")
 
 func pickup_weapon(var w):
@@ -121,3 +124,11 @@ func _on_Bin_body_exited(body):
 
 func _on_Police1_eaten():
 	pass # Replace with function body.
+
+func _on_HungetTimer_timeout():
+	hunger -= 1
+	emit_signal("hunger", hunger)
+	
+	if hunger <= 0:
+		kill()
+	

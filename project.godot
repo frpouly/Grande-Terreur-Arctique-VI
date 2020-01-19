@@ -36,6 +36,13 @@ config/name="Gamejam"
 run/main_scene="res://carte/Carte.tscn"
 config/icon="res://icon.png"
 
+[debug]
+
+gdscript/warnings/unused_variable=false
+gdscript/warnings/unused_class_variable=false
+gdscript/warnings/unused_argument=false
+gdscript/warnings/return_value_discarded=false
+
 [importer_defaults]
 
 texture={
