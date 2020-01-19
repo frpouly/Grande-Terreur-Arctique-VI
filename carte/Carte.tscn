@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://carte/Carte.gd" type="Script" id=1]
 [ext_resource path="res://assets/new_tileset.tres" type="TileSet" id=2]
@@ -6,6 +6,8 @@
 [ext_resource path="res://bin/Bin.tscn" type="PackedScene" id=4]
 [ext_resource path="res://pickable/Uzi.tscn" type="PackedScene" id=5]
 [ext_resource path="res://spawner/PolicierSpawner.tscn" type="PackedScene" id=6]
+[ext_resource path="res://spawner/PolicierSpawner1.gd" type="Script" id=7]
+[ext_resource path="res://spawner/PolicierSpawner2.gd" type="Script" id=8]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 559.532, 22.3152 )
@@ -149,9 +151,11 @@ position = Vector2( 219.347, 222.957 )
 
 [node name="PolicierSpawn" parent="Spawns" instance=ExtResource( 6 )]
 position = Vector2( 647.678, 275.691 )
+script = ExtResource( 7 )
 
 [node name="PolicierSpawner" parent="Spawns" instance=ExtResource( 6 )]
 position = Vector2( 1024, 1024 )
+script = ExtResource( 8 )
 
 [node name="PolicierSpawner2" parent="Spawns" instance=ExtResource( 6 )]
 position = Vector2( 600, 700 )

@@ -83,6 +83,7 @@ cast_to = Vector2( 2000, 0 )
 scale = Vector2( 1.01334, 1 )
 frames = SubResource( 2 )
 animation = "right"
+frame = 4
 playing = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
